@@ -1,0 +1,66 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Global default-deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Primitives
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+    
+    function incoming() {
+      return request.resource.data;
+    }
+    
+    function existing() {
+      return resource.data;
+    }
+
+    function isAdmin() {
+      return request.auth != null && request.auth.token.email == 'arunjaygautam@gmail.com';
+    }
+
+    // Validation for Student Enquiry
+    function isValidStudentEnquiry(data) {
+      return data.keys().hasAll(['parentsName', 'studentClass', 'subjects', 'school', 'location', 'mobile', 'createdAt']) && 
+             data.keys().size() == 7 &&
+             data.parentsName is string && data.parentsName.size() > 0 && data.parentsName.size() <= 200 &&
+             data.studentClass is string && data.studentClass.size() > 0 && data.studentClass.size() <= 100 &&
+             data.subjects is string && data.subjects.size() > 0 && data.subjects.size() <= 300 &&
+             data.school is string && data.school.size() > 0 && data.school.size() <= 200 &&
+             data.location is string && data.location.size() > 0 && data.location.size() <= 200 &&
+             data.mobile is string && data.mobile.size() > 0 && data.mobile.size() <= 20 &&
+             data.createdAt == request.time;
+    }
+
+    match /studentEnquiries/{enquiryId} {
+      allow read: if isAdmin(); 
+      allow create: if isValidId(enquiryId) && isValidStudentEnquiry(incoming());
+      allow update: if false;
+      allow delete: if false;
+    }
+
+    // Validation for Tutor Enquiry
+    function isValidTutorEnquiry(data) {
+      return data.keys().hasAll(['fullName', 'classesTeach', 'experience', 'location', 'mobile', 'createdAt']) && 
+             data.keys().size() == 6 &&
+             data.fullName is string && data.fullName.size() > 0 && data.fullName.size() <= 200 &&
+             data.classesTeach is string && data.classesTeach.size() > 0 && data.classesTeach.size() <= 300 &&
+             data.experience is string && data.experience.size() > 0 && data.experience.size() <= 100 &&
+             data.location is string && data.location.size() > 0 && data.location.size() <= 200 &&
+             data.mobile is string && data.mobile.size() > 0 && data.mobile.size() <= 20 &&
+             data.createdAt == request.time;
+    }
+
+    match /tutorEnquiries/{enquiryId} {
+      allow read: if isAdmin();
+      allow create: if isValidId(enquiryId) && isValidTutorEnquiry(incoming());
+      allow update: if false;
+      allow delete: if false;
+    }
+  }
+}

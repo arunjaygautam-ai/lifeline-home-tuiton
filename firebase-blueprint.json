@@ -1,0 +1,43 @@
+{
+  "entities": {
+    "StudentEnquiry": {
+      "title": "Student Enquiry",
+      "description": "Enquiry submitted by a parent or student for tuition.",
+      "type": "object",
+      "properties": {
+        "parentsName": { "type": "string" },
+        "studentClass": { "type": "string" },
+        "subjects": { "type": "string" },
+        "school": { "type": "string" },
+        "location": { "type": "string" },
+        "mobile": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Firestore server timestamp" }
+      },
+      "required": ["parentsName", "studentClass", "subjects", "school", "location", "mobile", "createdAt"]
+    },
+    "TutorEnquiry": {
+      "title": "Tutor Enquiry",
+      "description": "Enquiry submitted by a teacher to join as a tutor.",
+      "type": "object",
+      "properties": {
+        "fullName": { "type": "string" },
+        "classesTeach": { "type": "string" },
+        "experience": { "type": "string" },
+        "location": { "type": "string" },
+        "mobile": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Firestore server timestamp" }
+      },
+      "required": ["fullName", "classesTeach", "experience", "location", "mobile", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/studentEnquiries/{enquiryId}": {
+      "schema": { "$ref": "#/entities/StudentEnquiry" },
+      "description": "Stores student enquiries."
+    },
+    "/tutorEnquiries/{enquiryId}": {
+      "schema": { "$ref": "#/entities/TutorEnquiry" },
+      "description": "Stores tutor enquiries."
+    }
+  }
+}
