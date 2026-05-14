@@ -1,7 +1,24 @@
 import { motion } from 'motion/react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { useState } from 'react';
 
 export default function Contact() {
+  const [form, setForm] = useState({ name: '', phone: '', email: '', message: '' });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const text = `Hi! I would like to get in touch.
+Name: ${form.name}
+Phone: ${form.phone}
+Email: ${form.email || 'N/A'}
+
+Message:
+${form.message}`;
+
+    const url = `https://wa.me/919934985213?text=${encodeURIComponent(text)}`;
+    window.open(url, '_blank');
+  };
+
   return (
     <div className="py-12 md:py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -72,31 +89,31 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
           >
-            <form className="bg-white p-8 md:p-12 rounded-3xl shadow-lg border border-slate-100 flex flex-col gap-6">
+            <form onSubmit={handleSubmit} className="bg-white p-8 md:p-12 rounded-3xl shadow-lg border border-slate-100 flex flex-col gap-6">
               <h3 className="text-2xl font-bold font-heading text-slate-900 mb-2">Send us a Message</h3>
               
               <div className="flex flex-col gap-2">
                 <label className="text-sm font-semibold text-slate-700">Full Name</label>
-                <input type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-colors bg-slate-50 hover:bg-white" placeholder="Enter your name" required />
+                <input type="text" value={form.name} onChange={(e) => setForm({...form, name: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-colors bg-slate-50 hover:bg-white" placeholder="Enter your name" required />
               </div>
 
               <div className="flex flex-col gap-2">
                 <label className="text-sm font-semibold text-slate-700">Phone Number</label>
-                <input type="tel" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-colors bg-slate-50 hover:bg-white" placeholder="10-digit mobile number" required />
+                <input type="tel" value={form.phone} onChange={(e) => setForm({...form, phone: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-colors bg-slate-50 hover:bg-white" placeholder="10-digit mobile number" required />
               </div>
 
               <div className="flex flex-col gap-2">
                 <label className="text-sm font-semibold text-slate-700">Email (Optional)</label>
-                <input type="email" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-colors bg-slate-50 hover:bg-white" placeholder="Enter your email" />
+                <input type="email" value={form.email} onChange={(e) => setForm({...form, email: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-colors bg-slate-50 hover:bg-white" placeholder="Enter your email" />
               </div>
 
               <div className="flex flex-col gap-2">
                 <label className="text-sm font-semibold text-slate-700">Message</label>
-                <textarea rows={4} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-colors bg-slate-50 hover:bg-white resize-none" placeholder="How can we help you?" required></textarea>
+                <textarea rows={4} value={form.message} onChange={(e) => setForm({...form, message: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-colors bg-slate-50 hover:bg-white resize-none" placeholder="How can we help you?" required></textarea>
               </div>
 
-              <button type="submit" className="w-full bg-primary-600 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-primary-700 transition-colors mt-2">
-                Send Message <Send className="w-4 h-4" />
+              <button type="submit" className="w-full bg-[#25d366] text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-green-600 transition-colors mt-2">
+                Send via WhatsApp <Send className="w-4 h-4 ml-1" />
               </button>
             </form>
           </motion.div>

@@ -87,9 +87,9 @@ export default function Services() {
               <BookOpen className="w-20 h-20 text-primary-400 mb-8 relative z-10" />
               <h3 className="text-3xl font-bold font-heading mb-4 relative z-10">Start Learning Today</h3>
               <p className="text-slate-300 mb-10 relative z-10 text-lg">Book a free demo class to experience our teaching methodology firsthand.</p>
-              <a href="/#parents-inquiry" className="bg-primary-600 block w-full py-4 rounded-xl font-bold text-center text-lg hover:bg-primary-500 transition-colors shadow-lg shadow-primary-500/30 relative z-10 hover:-translate-y-1">
+              <Link to="/#parents-inquiry" className="bg-primary-600 block w-full py-4 rounded-xl font-bold text-center text-lg hover:bg-primary-500 transition-colors shadow-lg shadow-primary-500/30 relative z-10 hover:-translate-y-1">
                 Request Free Demo
-              </a>
+              </Link>
             </div>
           </div>
         </div>
