@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { db, auth, googleProvider, handleFirestoreError, OperationType } from '../lib/firebase';
 import { collection, onSnapshot } from 'firebase/firestore';
-import { signInWithPopup, signOut, onAuthStateChanged, User, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
+import { signInWithPopup, signOut, onAuthStateChanged, User, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
 import { LogOut, BookOpen, AlertCircle } from 'lucide-react';
 
 type StudentEnquiry = { id: string; parentsName: string; studentClass: string; subjects: string; school: string; location: string; mobile: string; createdAt: any };
@@ -29,7 +29,7 @@ export default function Admin() {
   }, []);
 
   useEffect(() => {
-    if (user?.email === 'arunjaygautam@gmail.com') {
+    if (user?.email?.toLowerCase() === 'arunjaygautam@gmail.com') {
       const unsubStudents = onSnapshot(collection(db, 'studentEnquiries'), (snapshot) => {
         const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as StudentEnquiry));
         setStudentEnquiries(data.sort((a,b) => b.createdAt?.toMillis() - a.createdAt?.toMillis()));
@@ -86,6 +86,20 @@ export default function Admin() {
     }
   }
 
+  const handleResetPassword = async () => {
+    if (!email) {
+      setLoginError('Please enter your email above first, then click Forgot Password again.');
+      return;
+    }
+    setLoginError('');
+    try {
+      await sendPasswordResetEmail(auth, email);
+      setLoginError('Password reset email sent! Check your inbox to set a password, then log in here.');
+    } catch(err: any) {
+      setLoginError(err.message || 'Failed to send reset email.');
+    }
+  };
+
   if (loadingA) return <div className="p-8 text-center text-slate-500">Loading auth...</div>;
 
   if (!user) {
@@ -133,8 +147,16 @@ export default function Admin() {
           </form>
           
           <button 
+            type="button"
+            onClick={handleResetPassword}
+            className="w-full text-center mt-4 text-sm font-medium text-primary-600 hover:text-primary-700 transition-colors"
+          >
+            Forgot Password? Set a new one here
+          </button>
+
+          <button 
             onClick={() => setIsRegistering(!isRegistering)} 
-            className="w-full text-center mt-4 text-sm text-slate-500 hover:text-primary-600 transition-colors"
+            className="w-full text-center mt-2 text-sm text-slate-500 hover:text-primary-600 transition-colors"
           >
             {isRegistering ? 'Already have an account? Sign in' : "First time? Register instead"}
           </button>
@@ -143,7 +165,7 @@ export default function Admin() {
     );
   }
 
-  if (user.email !== 'arunjaygautam@gmail.com') {
+  if (user.email?.toLowerCase() !== 'arunjaygautam@gmail.com') {
     return (
       <div className="p-8 text-center bg-slate-50 min-h-screen">
         <div className="bg-white p-8 rounded-2xl shadow-sm max-w-md mx-auto">
