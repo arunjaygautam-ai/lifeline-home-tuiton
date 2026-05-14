@@ -3,7 +3,7 @@ import {
   Users, BookOpen, Star, Clock, 
   ChevronRight, PhoneCall, CheckCircle2,
   ChevronDown, MessageCircle, ArrowRight,
-  ChevronUp
+  ChevronUp, MapPin
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -125,10 +125,12 @@ export default function Home() {
 
             {/* Right Form Side */}
             <motion.div 
+              id="parents-inquiry"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               className="w-full lg:w-2/5 bg-[#7a52a3] rounded-2xl p-6 md:p-8 shadow-xl text-white"
             >
+              <h2 className="text-2xl font-bold text-center mb-6" style={{ color: 'white' }}>Parents Inquiry</h2>
               <form className="flex flex-col gap-4" onSubmit={handleStudentSubmit}>
                 <div>
                   <label className="font-bold mb-1.5 block">Parents Name <span className="text-red-500">*</span></label>
@@ -154,14 +156,12 @@ export default function Home() {
                   <label className="font-bold mb-1.5 block">Mobile Number <span className="text-red-500">*</span></label>
                   <input type="tel" placeholder="10-digit mobile number" value={studentForm.mobile} onChange={(e) => setStudentForm({...studentForm, mobile: e.target.value})} required className="w-full p-2.5 rounded font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
                 </div>
-                
                 <div className="flex items-center gap-2 mt-2">
                   <input type="checkbox" id="terms" className="w-4 h-4 rounded text-[#ec2d5e]" required defaultChecked />
                   <label htmlFor="terms" className="text-sm font-medium text-white cursor-pointer">
                     Terms and Conditions applied
                   </label>
                 </div>
-
                 <button type="submit" disabled={isSubmittingStudent} className="w-full bg-[#ec2d5e] hover:bg-[#d1214d] text-white font-bold py-3.5 rounded mt-2 transition-colors disabled:opacity-50">
                   {isSubmittingStudent ? 'Submitting...' : 'Submit Enquiry'}
                 </button>
@@ -213,9 +213,9 @@ export default function Home() {
                       <li className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-white" /> Trust & emotional safety (Caring)</li>
                       <li className="flex items-center gap-2"><CheckCircle2 className="w-5 h-5 text-white" /> Dedication (Committed)</li>
                     </ul>
-                    <Link to="/student-inquiry" className="bg-[#ec2d5e] hover:bg-[#d1214d] text-white px-6 py-2 rounded-full font-bold inline-block shadow-md transition-colors">
+                    <a href="https://wa.me/919934985213" target="_blank" rel="noopener noreferrer" className="bg-[#ec2d5e] hover:bg-[#d1214d] text-white px-6 py-2 rounded-full font-bold inline-block shadow-md transition-colors">
                       REGISTER NOW
-                    </Link>
+                    </a>
                  </div>
               </div>
             </div>
@@ -339,8 +339,8 @@ export default function Home() {
               <div className="absolute left-0 top-0 bottom-0 w-2 bg-[#ec2d5e]"></div>
               <div className="p-6 md:p-8 pl-8 md:pl-10">
                 <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">👩‍🏫 Female Tutors</h3>
-                <div className="w-full h-48 md:h-56 bg-slate-200 mb-6 overflow-hidden border-4 border-white shadow-sm">
-                  <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80" alt="Female Tutor" className="w-full h-full object-cover" />
+                <div className="w-full h-64 md:h-72 bg-slate-200 mb-6 overflow-hidden border-4 border-white shadow-sm flex items-center justify-center">
+                  <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80" alt="Female Tutor" className="w-full h-full object-cover object-[center_15%]" />
                 </div>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-center gap-3 font-bold text-slate-700 text-sm md:text-base"><span className="text-lg">👩‍🏫</span> 200+ Verified Female Tutors</li>
@@ -348,9 +348,9 @@ export default function Home() {
                   <li className="flex items-center gap-3 font-bold text-slate-700 text-sm md:text-base"><span className="text-lg">🧘‍♀️</span> Calm, patient, and safety-first</li>
                   <li className="flex items-center gap-3 font-bold text-slate-700 text-sm md:text-base"><span className="text-lg">📚</span> Ideal for primary & middle school</li>
                 </ul>
-                <Link to="/student-inquiry" className="block text-center bg-[#25d366] hover:bg-green-600 text-white font-bold py-3 rounded-lg transition-colors">
-                  Enquire Now
-                </Link>
+                <a href="https://wa.me/919934985213" target="_blank" rel="noopener noreferrer" className="block text-center bg-[#25d366] hover:bg-green-600 text-white font-bold py-3 rounded-lg transition-colors mt-auto">
+                  Enquire via WhatsApp
+                </a>
               </div>
             </div>
 
@@ -358,8 +358,8 @@ export default function Home() {
               <div className="absolute left-0 top-0 bottom-0 w-2 bg-blue-500"></div>
               <div className="p-6 md:p-8 pl-8 md:pl-10">
                 <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">🧑‍🏫 Male Tutors</h3>
-                <div className="w-full h-48 md:h-56 bg-slate-200 mb-6 overflow-hidden border-4 border-white shadow-sm">
-                  <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80" alt="Male Tutor" className="w-full h-full object-cover" />
+                <div className="w-full h-64 md:h-72 bg-slate-200 mb-6 overflow-hidden border-4 border-white shadow-sm flex items-center justify-center">
+                  <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80" alt="Male Tutor" className="w-full h-full object-cover object-[center_20%]" />
                 </div>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-center gap-3 font-bold text-slate-700 text-sm md:text-base"><span className="text-lg">🧑‍🏫</span> 500+ Verified Male Tutors</li>
@@ -367,19 +367,45 @@ export default function Home() {
                   <li className="flex items-center gap-3 font-bold text-slate-700 text-sm md:text-base"><span className="w-5 h-5 bg-blue-400 rounded-sm inline-block"></span> Strong in Math, Science, English</li>
                   <li className="flex items-center gap-3 font-bold text-slate-700 text-sm md:text-base"><Clock className="w-5 h-5 text-slate-500" /> Flexible evening time slots</li>
                 </ul>
-                <Link to="/student-inquiry" className="block text-center bg-[#25d366] hover:bg-green-600 text-white font-bold py-3 rounded-lg transition-colors">
-                  Enquire Now
-                </Link>
+                <a href="https://wa.me/919934985213" target="_blank" rel="noopener noreferrer" className="block text-center bg-[#25d366] hover:bg-green-600 text-white font-bold py-3 rounded-lg transition-colors mt-auto">
+                  Enquire via WhatsApp
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* TOP LOCALITIES IN PATNA */}
+      <section className="py-16 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4 flex justify-center items-center gap-2">
+              <MapPin className="w-8 h-8 text-[#ec2d5e]" /> Top Localities We Cover in Patna
+            </h2>
+            <p className="text-slate-600 text-lg">We provide expert home tutors across all major areas in Patna.</p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {[
+              "Boring Road", "Kankarbagh", "Rajendra Nagar", "Patliputra Colony", 
+              "Anisabad", "Phulwari Sharif", "Bailey Road", "Gola Road",
+              "Jagdeo Path", "Saguna More", "Danapur", "Digha",
+              "Ashiana Nagar", "Kurji", "SK Puri", "Kadamkuan"
+            ].map((area, index) => (
+              <div key={index} className="bg-white p-4 rounded-xl shadow-sm border border-slate-100 flex items-center gap-3 hover:shadow-md transition-shadow hover:border-[#ec2d5e] group">
+                <MapPin className="w-5 h-5 text-slate-400 group-hover:text-[#ec2d5e] transition-colors" />
+                <span className="font-bold text-slate-700 group-hover:text-slate-900">{area}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* TUTOR ENQUIRY FORM */}
-      <section className="py-16 bg-white">
+      <section id="tutor-inquiry" className="py-16 bg-white">
         <div className="max-w-xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-slate-900 text-center mb-8">Tutor Enquiry</h2>
+          <h2 className="text-2xl font-bold text-slate-900 text-center mb-8">Tutor Inquiry</h2>
           <div className="bg-[#7a52a3] rounded-2xl p-6 md:p-8 shadow-xl text-white">
             <form className="flex flex-col gap-4" onSubmit={handleTutorSubmit}>
               <div>

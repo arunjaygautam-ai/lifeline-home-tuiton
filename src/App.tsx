@@ -4,8 +4,6 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Services from './pages/Services';
-import TutorRegistration from './pages/TutorRegistration';
-import StudentInquiry from './pages/StudentInquiry';
 import Admin from './pages/Admin';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -19,8 +17,6 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/register-tutor" element={<TutorRegistration />} />
-          <Route path="/student-inquiry" element={<StudentInquiry />} />
         </Route>
         <Route path="/admin" element={<Admin />} />
       </Routes>

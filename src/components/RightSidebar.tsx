@@ -25,7 +25,7 @@ export default function RightSidebar() {
       </motion.a>
       <motion.a 
         whileHover={{ scale: 1.1, x: -5 }}
-        href="/register-tutor" 
+        href="/#tutor-inquiry" 
         className="w-12 h-12 bg-[#d73f7a] rounded-full flex items-center justify-center text-white shadow-lg border-2 border-white"
         title="Register as Tutor"
       >
@@ -33,7 +33,7 @@ export default function RightSidebar() {
       </motion.a>
       <motion.a 
         whileHover={{ scale: 1.1, x: -5 }}
-        href="/student-inquiry" 
+        href="/#parents-inquiry" 
         className="w-12 h-12 bg-[#f4a222] rounded-full flex items-center justify-center text-white shadow-lg border-2 border-white"
         title="Enquire Now"
       >

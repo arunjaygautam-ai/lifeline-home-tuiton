@@ -8,10 +8,10 @@ export default function MobileStickyFooter() {
       className="md:hidden fixed bottom-0 left-0 right-0 w-full bg-white border-t border-slate-200 z-[999] flex justify-around items-center pt-2.5 px-2 shadow-[0_-4px_10px_-2px_rgba(0,0,0,0.1)]"
       style={{ paddingBottom: 'calc(max(env(safe-area-inset-bottom), 10px))' }}
     >
-      <Link to="/student-inquiry" className="flex flex-col items-center justify-center w-1/4 group">
+      <a href="/#parents-inquiry" className="flex flex-col items-center justify-center w-1/4 group">
         <Users className="w-[26px] h-[26px] text-black mb-1.5 transition-transform group-hover:scale-110" strokeWidth={1.5} />
         <span className="text-[12px] font-bold text-black text-center leading-tight">Parents<br/>Enquiry</span>
-      </Link>
+      </a>
       
       <a href="tel:+919934985213" className="flex flex-col items-center justify-center w-1/4 group">
         <Phone className="w-[26px] h-[26px] text-red-600 mb-1.5 animate-bounce" strokeWidth={0} fill="currentColor" />
@@ -25,10 +25,10 @@ export default function MobileStickyFooter() {
         <span className="text-[12px] font-bold text-black text-center leading-tight">Chat</span>
       </a>
 
-      <Link to="/register-tutor" className="flex flex-col items-center justify-center w-1/4 group">
+      <a href="/#tutor-inquiry" className="flex flex-col items-center justify-center w-1/4 group">
         <GraduationCap className="w-[26px] h-[26px] text-black mb-1.5 transition-transform group-hover:scale-110" strokeWidth={1.5} />
         <span className="text-[12px] font-bold text-black text-center leading-tight">Tutor<br/>Enquiry</span>
-      </Link>
+      </a>
     </div>
   );
 }
