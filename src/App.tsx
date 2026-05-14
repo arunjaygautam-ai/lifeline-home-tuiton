@@ -7,10 +7,12 @@ import Services from './pages/Services';
 import TutorRegistration from './pages/TutorRegistration';
 import StudentInquiry from './pages/StudentInquiry';
 import Admin from './pages/Admin';
+import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
