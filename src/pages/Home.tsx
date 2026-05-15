@@ -85,13 +85,13 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex flex-col lg:flex-row items-stretch gap-8 lg:gap-12">
+          <div className="flex flex-col gap-8 lg:gap-12 max-w-6xl mx-auto">
             
-            {/* Left Image/Banner side (styled like screenshot) */}
+            {/* Top Image/Banner side (styled like screenshot) */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }} 
               animate={{ opacity: 1, scale: 1 }} 
-              className="w-full lg:w-3/5 bg-[#ffebee] rounded-2xl overflow-hidden relative shadow-md flex flex-col md:flex-row"
+              className="w-full bg-[#ffebee] rounded-2xl overflow-hidden relative shadow-lg flex flex-col md:flex-row"
             >
                {/* Content area within banner */}
                <div className="p-6 md:p-8 flex-1 flex flex-col justify-center relative z-10 order-2 md:order-1">
@@ -126,9 +126,9 @@ export default function Home() {
             {/* Right Form Side */}
             <motion.div 
               id="parents-inquiry"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="w-full lg:w-2/5 bg-[#7a52a3] rounded-2xl p-6 md:p-8 shadow-xl text-white"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="w-full md:max-w-xl mx-auto bg-[#7a52a3] rounded-2xl p-6 md:p-8 shadow-xl text-white"
             >
               <h2 className="text-2xl font-bold text-center mb-6" style={{ color: 'white' }}>Parents Inquiry</h2>
               <form className="flex flex-col gap-4" onSubmit={handleStudentSubmit}>
