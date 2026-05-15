@@ -91,36 +91,13 @@ export default function Home() {
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }} 
               animate={{ opacity: 1, scale: 1 }} 
-              className="w-full bg-[#ffebee] rounded-2xl overflow-hidden relative shadow-lg flex flex-col md:flex-row"
+              className="w-full bg-white rounded-2xl overflow-hidden shadow-lg"
             >
-               {/* Content area within banner */}
-               <div className="p-6 md:p-8 flex-1 flex flex-col justify-center relative z-10 order-2 md:order-1">
-                 
-                 <div className="bg-[#ec2d5e] text-white p-3 inline-block font-bold text-xl md:text-3xl mb-4 transform -skew-x-12 shadow-lg w-max">
-                   <div className="skew-x-12">
-                     TOP-RATED <br /> HOME TUTORS <br /> <span className="text-slate-900 bg-white px-2 mt-1 inline-block">IN PATNA</span>
-                   </div>
-                 </div>
-
-                 <ul className="space-y-3 mt-4 text-slate-800 font-bold mb-6">
-                    <li className="flex items-center gap-2 text-sm md:text-base"><CheckCircle2 className="w-5 h-5 text-green-600" /> CLASS 1-12 (CBSE/ICSE/BIHAR BOARD)</li>
-                    <li className="flex items-center gap-2 text-sm md:text-base"><CheckCircle2 className="w-5 h-5 text-green-600" /> EXPERIENCED & VERIFIED TUTORS</li>
-                    <li className="flex items-center gap-2 text-sm md:text-base"><CheckCircle2 className="w-5 h-5 text-green-600" /> FLEXIBLE TIME SLOTS</li>
-                 </ul>
-
-                 <div>
-                   <span className="bg-[#f4a222] text-slate-900 font-bold px-4 py-2 rounded shadow-md border-2 border-white inline-block">FREE DEMO CLASS</span>
-                 </div>
-               </div>
-
-               {/* Right Image within banner */}
-               <div className="w-full md:w-1/2 relative order-1 md:order-2 h-64 md:h-auto">
-                 <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" className="absolute inset-0 w-full h-full object-cover" alt="Home Tutors" />
-                 {/* Rating Badge */}
-                 <div className="absolute top-4 left-4 bg-yellow-400 text-slate-900 font-bold text-sm px-2 py-1 flex items-center gap-1 shadow-lg border border-yellow-500 rounded">
-                    5.0 <Star className="w-4 h-4 fill-slate-900 text-slate-900" />
-                 </div>
-               </div>
+              <img 
+                src="/banner.png" 
+                alt="Lifeline Home Tuition - Top Rated Home Tutors in Patna" 
+                className="w-full h-auto object-contain" 
+              />
             </motion.div>
 
             {/* Right Form Side */}
