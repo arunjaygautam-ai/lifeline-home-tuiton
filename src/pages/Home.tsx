@@ -325,7 +325,7 @@ export default function Home() {
                   <li className="flex items-center gap-3 font-bold text-slate-700 text-sm md:text-base"><span className="text-lg">🧘‍♀️</span> Calm, patient, and safety-first</li>
                   <li className="flex items-center gap-3 font-bold text-slate-700 text-sm md:text-base"><span className="text-lg">📚</span> Ideal for primary & middle school</li>
                 </ul>
-                <a href="/#tutor-inquiry" className="block text-center bg-[#ec2d5e] hover:bg-[#d1214d] text-white font-bold py-3 rounded-lg transition-colors mt-auto">
+                <a href="/#parents-inquiry" className="block text-center bg-[#ec2d5e] hover:bg-[#d1214d] text-white font-bold py-3 rounded-lg transition-colors mt-auto">
                   Enquire Now
                 </a>
               </div>
@@ -344,7 +344,7 @@ export default function Home() {
                   <li className="flex items-center gap-3 font-bold text-slate-700 text-sm md:text-base"><span className="w-5 h-5 bg-blue-400 rounded-sm inline-block"></span> Strong in Math, Science, English</li>
                   <li className="flex items-center gap-3 font-bold text-slate-700 text-sm md:text-base"><Clock className="w-5 h-5 text-slate-500" /> Flexible evening time slots</li>
                 </ul>
-                <a href="/#tutor-inquiry" className="block text-center bg-[#ec2d5e] hover:bg-[#d1214d] text-white font-bold py-3 rounded-lg transition-colors mt-auto">
+                <a href="/#parents-inquiry" className="block text-center bg-[#ec2d5e] hover:bg-[#d1214d] text-white font-bold py-3 rounded-lg transition-colors mt-auto">
                   Enquire Now
                 </a>
               </div>
