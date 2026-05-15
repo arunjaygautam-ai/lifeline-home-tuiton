@@ -4,7 +4,7 @@ import { collection, onSnapshot } from 'firebase/firestore';
 import { signInWithPopup, signOut, onAuthStateChanged, User, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
 import { LogOut, BookOpen, AlertCircle } from 'lucide-react';
 
-type StudentEnquiry = { id: string; parentsName: string; studentClass: string; subjects: string; school: string; location: string; mobile: string; createdAt: any };
+type StudentEnquiry = { id: string; studentName: string; studentClass: string; subjects: string; school: string; location: string; mobile: string; createdAt: any };
 type TutorEnquiry = { id: string; fullName: string; classesTeach: string; experience: string; location: string; mobile: string; createdAt: any };
 
 export default function Admin() {
@@ -236,7 +236,7 @@ export default function Admin() {
                     studentEnquiries.map(enq => (
                       <tr key={enq.id} className="hover:bg-slate-50 transition-colors">
                         <td className="p-4 whitespace-nowrap">{enq.createdAt?.toDate ? new Date(enq.createdAt.toDate()).toLocaleDateString() : 'N/A'}</td>
-                        <td className="p-4 font-medium">{enq.parentsName}</td>
+                        <td className="p-4 font-medium">{enq.studentName || 'N/A'}</td>
                         <td className="p-4">{enq.studentClass}</td>
                         <td className="p-4 max-w-xs truncate" title={enq.subjects}>{enq.subjects}</td>
                         <td className="p-4">{enq.school}</td>
