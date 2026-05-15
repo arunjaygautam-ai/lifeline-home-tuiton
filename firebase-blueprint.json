@@ -5,7 +5,7 @@
       "description": "Enquiry submitted by a parent or student for tuition.",
       "type": "object",
       "properties": {
-        "parentsName": { "type": "string" },
+        "studentName": { "type": "string" },
         "studentClass": { "type": "string" },
         "subjects": { "type": "string" },
         "school": { "type": "string" },
@@ -13,7 +13,7 @@
         "mobile": { "type": "string" },
         "createdAt": { "type": "string", "format": "date-time", "description": "Firestore server timestamp" }
       },
-      "required": ["parentsName", "studentClass", "subjects", "school", "location", "mobile", "createdAt"]
+      "required": ["studentName", "studentClass", "subjects", "school", "location", "mobile", "createdAt"]
     },
     "TutorEnquiry": {
       "title": "Tutor Enquiry",
