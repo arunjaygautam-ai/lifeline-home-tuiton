@@ -13,14 +13,14 @@ import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [studentForm, setStudentForm] = useState({ parentsName: '', studentClass: '', subjects: '', school: '', location: '', mobile: '' });
+  const [studentForm, setStudentForm] = useState({ studentName: '', studentClass: '', subjects: '', school: '', location: '', mobile: '' });
   const [tutorForm, setTutorForm] = useState({ fullName: '', classesTeach: '', experience: '', location: '', mobile: '' });
   const [isSubmittingStudent, setIsSubmittingStudent] = useState(false);
   const [isSubmittingTutor, setIsSubmittingTutor] = useState(false);
 
   const handleStudentSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!studentForm.parentsName || !studentForm.mobile) return alert("Please fill all required fields");
+    if (!studentForm.studentName || !studentForm.mobile) return alert("Please fill all required fields");
     setIsSubmittingStudent(true);
     try {
       await addDoc(collection(db, 'studentEnquiries'), {
@@ -28,7 +28,7 @@ export default function Home() {
         createdAt: serverTimestamp()
       });
       alert('Enquiry submitted successfully!');
-      setStudentForm({ parentsName: '', studentClass: '', subjects: '', school: '', location: '', mobile: '' });
+      setStudentForm({ studentName: '', studentClass: '', subjects: '', school: '', location: '', mobile: '' });
     } catch (error) {
       handleFirestoreError(error, OperationType.CREATE, 'studentEnquiries');
       alert('Error submitting enquiry. Please try again.');
@@ -133,8 +133,8 @@ export default function Home() {
               <h2 className="text-2xl font-bold text-center mb-6" style={{ color: 'white' }}>Parents Inquiry</h2>
               <form className="flex flex-col gap-4" onSubmit={handleStudentSubmit}>
                 <div>
-                  <label className="font-bold mb-1.5 block">Parents Name <span className="text-red-500">*</span></label>
-                  <input type="text" placeholder="Enter Parents name" value={studentForm.parentsName} onChange={(e) => setStudentForm({...studentForm, parentsName: e.target.value})} required className="w-full p-2.5 rounded font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                  <label className="font-bold mb-1.5 block">Student's Name <span className="text-red-500">*</span></label>
+                  <input type="text" placeholder="Enter Student's name" value={studentForm.studentName} onChange={(e) => setStudentForm({...studentForm, studentName: e.target.value})} required className="w-full p-2.5 rounded font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
                 </div>
                 <div>
                   <label className="font-bold mb-1.5 block">Student Class <span className="text-red-500">*</span></label>
