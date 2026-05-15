@@ -221,7 +221,7 @@ export default function Admin() {
                 <thead>
                   <tr className="bg-slate-50 text-slate-500 text-sm border-b border-slate-200">
                     <th className="p-4 font-semibold">Date</th>
-                    <th className="p-4 font-semibold">Parents Name</th>
+                    <th className="p-4 font-semibold">Student Name</th>
                     <th className="p-4 font-semibold">Student Class</th>
                     <th className="p-4 font-semibold">Subjects</th>
                     <th className="p-4 font-semibold">School</th>
