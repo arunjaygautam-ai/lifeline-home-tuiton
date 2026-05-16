@@ -22,10 +22,10 @@ export default function Footer() {
               Trusted Home Tutors in Patna for Every Class & Subject. We provide personalized one-to-one learning experiences to help students excel in their academics.
             </p>
             <div className="flex items-center gap-4 mt-2">
-              <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary-600 transition-colors text-white"><Facebook className="w-4 h-4" /></a>
-              <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary-600 transition-colors text-white"><Instagram className="w-4 h-4" /></a>
-              <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary-600 transition-colors text-white"><Twitter className="w-4 h-4" /></a>
-              <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary-600 transition-colors text-white"><Linkedin className="w-4 h-4" /></a>
+              <a href="https://www.facebook.com/share/1JL8Dq1tYa/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary-600 transition-colors text-white"><Facebook className="w-4 h-4" /></a>
+              <a href="https://www.instagram.com/arunjaygautam" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary-600 transition-colors text-white"><Instagram className="w-4 h-4" /></a>
+              <a href="https://x.com/lifelinetuition" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary-600 transition-colors text-white"><Twitter className="w-4 h-4" /></a>
+              <a href="https://www.linkedin.com/in/lifeline-home-tuition-36544340b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary-600 transition-colors text-white"><Linkedin className="w-4 h-4" /></a>
             </div>
           </div>
 

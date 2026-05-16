@@ -81,7 +81,7 @@ export default function Home() {
               Top-Rated Home Tuition in <span className="text-[#ec2d5e]">Patna</span>
             </h1>
             <p className="text-lg md:text-xl font-bold text-[#ec2d5e]">
-              1-on-1 Classes | All Classes and All Subjects | Serving Patna since 1988
+              1-on-1 Classes | All Classes and All Subjects | Serving Patna since 1990
             </p>
           </div>
 
