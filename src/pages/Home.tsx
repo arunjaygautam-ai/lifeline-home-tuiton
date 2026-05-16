@@ -109,29 +109,31 @@ export default function Home() {
             >
               <h2 className="text-2xl font-bold text-center mb-6" style={{ color: 'white' }}>Parents Inquiry</h2>
               <form className="flex flex-col gap-4" onSubmit={handleStudentSubmit}>
-                <div>
-                  <label className="font-bold mb-1.5 block">Student's Name <span className="text-red-500">*</span></label>
-                  <input type="text" placeholder="Enter Student's name" value={studentForm.studentName} onChange={(e) => setStudentForm({...studentForm, studentName: e.target.value})} required className="w-full p-2.5 rounded font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
-                </div>
-                <div>
-                  <label className="font-bold mb-1.5 block">Student Class <span className="text-red-500">*</span></label>
-                  <input type="text" placeholder="Student Class" value={studentForm.studentClass} onChange={(e) => setStudentForm({...studentForm, studentClass: e.target.value})} required className="w-full p-2.5 rounded font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
-                </div>
-                <div>
-                  <label className="font-bold mb-1.5 block">Subjects you want to study <span className="text-red-500">*</span></label>
-                  <input type="text" placeholder="Subject you want to study" value={studentForm.subjects} onChange={(e) => setStudentForm({...studentForm, subjects: e.target.value})} required className="w-full p-2.5 rounded font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
-                </div>
-                <div>
-                  <label className="font-bold mb-1.5 block">School <span className="text-red-500">*</span></label>
-                  <input type="text" placeholder="School Name" value={studentForm.school} onChange={(e) => setStudentForm({...studentForm, school: e.target.value})} required className="w-full p-2.5 rounded font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
-                </div>
-                <div>
-                  <label className="font-bold mb-1.5 block">Location in Patna <span className="text-red-500">*</span></label>
-                  <input type="text" placeholder="Location in Patna" value={studentForm.location} onChange={(e) => setStudentForm({...studentForm, location: e.target.value})} required className="w-full p-2.5 rounded font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
-                </div>
-                <div>
-                  <label className="font-bold mb-1.5 block">Mobile Number <span className="text-red-500">*</span></label>
-                  <input type="tel" placeholder="10-digit mobile number" value={studentForm.mobile} onChange={(e) => setStudentForm({...studentForm, mobile: e.target.value})} required className="w-full p-2.5 rounded font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="font-bold mb-1.5 block">Student's Name <span className="text-red-500">*</span></label>
+                    <input type="text" placeholder="Enter Student's name" value={studentForm.studentName} onChange={(e) => setStudentForm({...studentForm, studentName: e.target.value})} required className="w-full p-2.5 rounded font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                  </div>
+                  <div>
+                    <label className="font-bold mb-1.5 block">Student Class <span className="text-red-500">*</span></label>
+                    <input type="text" placeholder="Student Class" value={studentForm.studentClass} onChange={(e) => setStudentForm({...studentForm, studentClass: e.target.value})} required className="w-full p-2.5 rounded font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                  </div>
+                  <div>
+                    <label className="font-bold mb-1.5 block">Subjects you want to study <span className="text-red-500">*</span></label>
+                    <input type="text" placeholder="Subject you want to study" value={studentForm.subjects} onChange={(e) => setStudentForm({...studentForm, subjects: e.target.value})} required className="w-full p-2.5 rounded font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                  </div>
+                  <div>
+                    <label className="font-bold mb-1.5 block">School <span className="text-red-500">*</span></label>
+                    <input type="text" placeholder="School Name" value={studentForm.school} onChange={(e) => setStudentForm({...studentForm, school: e.target.value})} required className="w-full p-2.5 rounded font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                  </div>
+                  <div>
+                    <label className="font-bold mb-1.5 block">Location in Patna <span className="text-red-500">*</span></label>
+                    <input type="text" placeholder="Location in Patna" value={studentForm.location} onChange={(e) => setStudentForm({...studentForm, location: e.target.value})} required className="w-full p-2.5 rounded font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                  </div>
+                  <div>
+                    <label className="font-bold mb-1.5 block">Mobile Number <span className="text-red-500">*</span></label>
+                    <input type="tel" placeholder="10-digit mobile number" value={studentForm.mobile} onChange={(e) => setStudentForm({...studentForm, mobile: e.target.value})} required className="w-full p-2.5 rounded font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                  </div>
                 </div>
                 <div className="flex items-center gap-2 mt-2">
                   <input type="checkbox" id="terms" className="w-4 h-4 rounded text-[#ec2d5e]" required defaultChecked />
@@ -385,28 +387,30 @@ export default function Home() {
           <h2 className="text-2xl font-bold text-slate-900 text-center mb-8">Tutor Inquiry</h2>
           <div className="bg-[#7a52a3] rounded-2xl p-6 md:p-8 shadow-xl text-white">
             <form className="flex flex-col gap-4" onSubmit={handleTutorSubmit}>
-              <div>
-                <label className="font-bold mb-1.5 block">Full Name <span className="text-red-500">*</span></label>
-                <input type="text" placeholder="Enter Full name" value={tutorForm.fullName} onChange={(e) => setTutorForm({...tutorForm, fullName: e.target.value})} required className="w-full p-3 rounded font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
-              </div>
-              <div>
-                <label className="font-bold mb-1.5 block">Classes You Teach <span className="text-red-500">*</span></label>
-                <input type="text" placeholder="Class you teach" value={tutorForm.classesTeach} onChange={(e) => setTutorForm({...tutorForm, classesTeach: e.target.value})} required className="w-full p-3 rounded font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
-              </div>
-              <div>
-                <label className="font-bold mb-1.5 block">Experience (in years) <span className="text-red-500">*</span></label>
-                <input type="text" placeholder="Experience" value={tutorForm.experience} onChange={(e) => setTutorForm({...tutorForm, experience: e.target.value})} required className="w-full p-3 rounded font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
-              </div>
-              <div>
-                <label className="font-bold mb-1.5 block">Location in Patna <span className="text-red-500">*</span></label>
-                <input type="text" placeholder="Location in Patna" value={tutorForm.location} onChange={(e) => setTutorForm({...tutorForm, location: e.target.value})} required className="w-full p-3 rounded font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
-              </div>
-              <div>
-                <label className="font-bold mb-1.5 block">Mobile Number <span className="text-red-500">*</span></label>
-                <input type="tel" placeholder="10-digit mobile number" value={tutorForm.mobile} onChange={(e) => setTutorForm({...tutorForm, mobile: e.target.value})} required className="w-full p-3 rounded font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="font-bold mb-1.5 block">Full Name <span className="text-red-500">*</span></label>
+                  <input type="text" placeholder="Enter Full name" value={tutorForm.fullName} onChange={(e) => setTutorForm({...tutorForm, fullName: e.target.value})} required className="w-full p-2.5 rounded font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                </div>
+                <div>
+                  <label className="font-bold mb-1.5 block">Classes You Teach <span className="text-red-500">*</span></label>
+                  <input type="text" placeholder="Class you teach" value={tutorForm.classesTeach} onChange={(e) => setTutorForm({...tutorForm, classesTeach: e.target.value})} required className="w-full p-2.5 rounded font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                </div>
+                <div>
+                  <label className="font-bold mb-1.5 block">Experience (in years) <span className="text-red-500">*</span></label>
+                  <input type="text" placeholder="Experience" value={tutorForm.experience} onChange={(e) => setTutorForm({...tutorForm, experience: e.target.value})} required className="w-full p-2.5 rounded font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                </div>
+                <div>
+                  <label className="font-bold mb-1.5 block">Location in Patna <span className="text-red-500">*</span></label>
+                  <input type="text" placeholder="Location in Patna" value={tutorForm.location} onChange={(e) => setTutorForm({...tutorForm, location: e.target.value})} required className="w-full p-2.5 rounded font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                </div>
+                <div className="md:col-span-2">
+                  <label className="font-bold mb-1.5 block">Mobile Number <span className="text-red-500">*</span></label>
+                  <input type="tel" placeholder="10-digit mobile number" value={tutorForm.mobile} onChange={(e) => setTutorForm({...tutorForm, mobile: e.target.value})} required className="w-full p-2.5 rounded font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                </div>
               </div>
 
-              <button type="submit" disabled={isSubmittingTutor} className="w-full bg-[#ec2d5e] hover:bg-[#d1214d] text-white font-bold py-3.5 rounded mt-4 transition-colors disabled:opacity-50">
+              <button type="submit" disabled={isSubmittingTutor} className="w-full bg-[#ec2d5e] hover:bg-[#d1214d] text-white font-bold py-3.5 rounded mt-2 transition-colors disabled:opacity-50">
                 {isSubmittingTutor ? 'Submitting...' : 'Submit Enquiry'}
               </button>
             </form>
