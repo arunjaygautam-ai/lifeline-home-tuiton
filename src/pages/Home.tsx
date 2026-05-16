@@ -73,10 +73,10 @@ export default function Home() {
       </div>
 
       {/* HERO SECTION */}
-      <section className="relative w-full pt-8 pb-16 bg-white overflow-hidden">
+      <section className="relative w-full pt-6 pb-10 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
-          <div className="text-center mb-8 md:mb-12">
+          <div className="text-center mb-6 md:mb-8">
             <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold font-heading text-slate-900 leading-[1.2] mb-3">
               Top-Rated Home Tuition in <span className="text-[#ec2d5e]">Patna</span>
             </h1>
@@ -85,7 +85,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-8 lg:gap-12 max-w-6xl mx-auto">
+          <div className="flex flex-col gap-6 lg:gap-8 max-w-6xl mx-auto">
             
             {/* Top Image/Banner side (styled like screenshot) */}
             <motion.div 
@@ -151,7 +151,7 @@ export default function Home() {
       </section>
 
       {/* WHY PARENTS TRUST */}
-      <section className="py-12 bg-white">
+      <section className="pt-4 pb-12 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <h2 className="text-3xl font-bold text-center mb-10 text-slate-900">Why Parents Trust Lifeline Home Tuition</h2>
           
@@ -356,7 +356,7 @@ export default function Home() {
       </section>
 
       {/* TOP LOCALITIES IN PATNA */}
-      <section className="py-16 bg-slate-50">
+      <section className="py-10 bg-slate-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-slate-900 mb-4 flex justify-center items-center gap-2">
@@ -382,7 +382,7 @@ export default function Home() {
       </section>
 
       {/* TUTOR ENQUIRY FORM */}
-      <section id="tutor-inquiry" className="py-16 bg-white">
+      <section id="tutor-inquiry" className="py-8 bg-white">
         <div className="max-w-xl mx-auto px-4">
           <h2 className="text-xl font-bold text-slate-900 text-center mb-6">Tutor Inquiry</h2>
           <div className="bg-[#7a52a3] rounded-2xl p-4 md:p-6 shadow-xl text-white">
@@ -419,7 +419,7 @@ export default function Home() {
       </section>
 
       {/* FAQS SECTION */}
-      <section className="py-16 bg-white">
+      <section className="pt-8 pb-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="text-3xl font-bold text-center mb-12">
             <span className="text-[#ec2d5e]">Frequently</span> Asked Questions
