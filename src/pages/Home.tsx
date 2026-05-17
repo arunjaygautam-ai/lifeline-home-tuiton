@@ -94,7 +94,7 @@ export default function Home() {
               className="w-full bg-white rounded-2xl overflow-hidden shadow-lg"
             >
               <img 
-                src="/banner.png" 
+                src="/banner.png.jpeg" 
                 alt="Lifeline Home Tuition - Top Rated Home Tutors in Patna" 
                 className="w-full h-auto object-contain" 
               />
@@ -384,8 +384,8 @@ export default function Home() {
       {/* TUTOR ENQUIRY FORM */}
       <section id="tutor-inquiry" className="py-8 bg-white">
         <div className="max-w-xl mx-auto px-4">
-          <h2 className="text-xl font-bold text-slate-900 text-center mb-6">Tutor Inquiry</h2>
           <div className="bg-[#7a52a3] rounded-2xl p-4 md:p-6 shadow-xl text-white">
+            <h2 className="text-xl font-bold text-center mb-4" style={{ color: 'white' }}>Tutor Inquiry</h2>
             <form className="flex flex-col gap-3" onSubmit={handleTutorSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div>
