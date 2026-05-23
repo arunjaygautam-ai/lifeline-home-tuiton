@@ -46,10 +46,11 @@ service cloud.firestore {
 
     // Validation for Tutor Enquiry
     function isValidTutorEnquiry(data) {
-      return data.keys().hasAll(['fullName', 'classesTeach', 'experience', 'location', 'mobile', 'createdAt']) && 
-             data.keys().size() == 6 &&
+      return data.keys().hasAll(['fullName', 'classesTeach', 'subjects', 'experience', 'location', 'mobile', 'createdAt']) && 
+             data.keys().size() == 7 &&
              data.fullName is string && data.fullName.size() > 0 && data.fullName.size() <= 200 &&
              data.classesTeach is string && data.classesTeach.size() > 0 && data.classesTeach.size() <= 300 &&
+             data.subjects is string && data.subjects.size() > 0 && data.subjects.size() <= 300 &&
              data.experience is string && data.experience.size() > 0 && data.experience.size() <= 100 &&
              data.location is string && data.location.size() > 0 && data.location.size() <= 200 &&
              data.mobile is string && data.mobile.size() > 0 && data.mobile.size() <= 20 &&

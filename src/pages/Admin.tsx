@@ -5,7 +5,7 @@ import { signInWithPopup, signOut, onAuthStateChanged, User, signInWithEmailAndP
 import { LogOut, BookOpen, AlertCircle } from 'lucide-react';
 
 type StudentEnquiry = { id: string; studentName: string; studentClass: string; subjects: string; school: string; location: string; mobile: string; createdAt: any };
-type TutorEnquiry = { id: string; fullName: string; classesTeach: string; experience: string; location: string; mobile: string; createdAt: any };
+type TutorEnquiry = { id: string; fullName: string; classesTeach: string; subjects?: string; experience: string; location: string; mobile: string; createdAt: any };
 
 export default function Admin() {
   const [user, setUser] = useState<User | null>(null);
@@ -255,7 +255,8 @@ export default function Admin() {
                   <tr className="bg-slate-50 text-slate-500 text-sm border-b border-slate-200">
                     <th className="p-4 font-semibold">Date</th>
                     <th className="p-4 font-semibold">Tutor Name</th>
-                    <th className="p-4 font-semibold">Classes/Subjects</th>
+                    <th className="p-4 font-semibold">Classes</th>
+                    <th className="p-4 font-semibold">Subjects you teach</th>
                     <th className="p-4 font-semibold">Experience</th>
                     <th className="p-4 font-semibold">Location</th>
                     <th className="p-4 font-semibold">Contact</th>
@@ -263,13 +264,14 @@ export default function Admin() {
                 </thead>
                 <tbody className="divide-y divide-slate-100 text-sm text-slate-700">
                   {tutorEnquiries.length === 0 ? (
-                    <tr><td colSpan={6} className="p-8 text-center text-slate-500">No tutor enquiries yet.</td></tr>
+                    <tr><td colSpan={7} className="p-8 text-center text-slate-500">No tutor enquiries yet.</td></tr>
                   ) : (
                     tutorEnquiries.map(enq => (
                       <tr key={enq.id} className="hover:bg-slate-50 transition-colors">
                         <td className="p-4 whitespace-nowrap">{enq.createdAt?.toDate ? new Date(enq.createdAt.toDate()).toLocaleDateString() : 'N/A'}</td>
                         <td className="p-4 font-medium">{enq.fullName}</td>
                         <td className="p-4 max-w-xs truncate" title={enq.classesTeach}>{enq.classesTeach}</td>
+                        <td className="p-4 max-w-xs truncate" title={enq.subjects}>{enq.subjects || 'N/A'}</td>
                         <td className="p-4">{enq.experience}</td>
                         <td className="p-4">{enq.location}</td>
                         <td className="p-4 font-medium">{enq.mobile}</td>

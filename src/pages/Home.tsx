@@ -14,7 +14,7 @@ import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [studentForm, setStudentForm] = useState({ studentName: '', studentClass: '', subjects: '', school: '', location: '', mobile: '' });
-  const [tutorForm, setTutorForm] = useState({ fullName: '', classesTeach: '', experience: '', location: '', mobile: '' });
+  const [tutorForm, setTutorForm] = useState({ fullName: '', classesTeach: '', subjects: '', experience: '', location: '', mobile: '' });
   const [isSubmittingStudent, setIsSubmittingStudent] = useState(false);
   const [isSubmittingTutor, setIsSubmittingTutor] = useState(false);
 
@@ -47,7 +47,7 @@ export default function Home() {
         createdAt: serverTimestamp()
       });
       alert('Tutor registration enquiry submitted successfully!');
-      setTutorForm({ fullName: '', classesTeach: '', experience: '', location: '', mobile: '' });
+      setTutorForm({ fullName: '', classesTeach: '', subjects: '', experience: '', location: '', mobile: '' });
     } catch (error) {
       handleFirestoreError(error, OperationType.CREATE, 'tutorEnquiries');
       alert('Error submitting enquiry. Please try again.');
@@ -397,6 +397,10 @@ export default function Home() {
                   <input type="text" placeholder="Class you teach" value={tutorForm.classesTeach} onChange={(e) => setTutorForm({...tutorForm, classesTeach: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
                 </div>
                 <div>
+                  <label className="font-bold mb-1 block text-sm">Subjects you teach <span className="text-red-500">*</span></label>
+                  <input type="text" placeholder="Subjects you teach" value={tutorForm.subjects} onChange={(e) => setTutorForm({...tutorForm, subjects: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                </div>
+                <div>
                   <label className="font-bold mb-1 block text-sm">Experience (in years) <span className="text-red-500">*</span></label>
                   <input type="text" placeholder="Experience" value={tutorForm.experience} onChange={(e) => setTutorForm({...tutorForm, experience: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
                 </div>
@@ -404,7 +408,7 @@ export default function Home() {
                   <label className="font-bold mb-1 block text-sm">Location in Patna <span className="text-red-500">*</span></label>
                   <input type="text" placeholder="Location in Patna" value={tutorForm.location} onChange={(e) => setTutorForm({...tutorForm, location: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
                 </div>
-                <div className="md:col-span-2">
+                <div>
                   <label className="font-bold mb-1 block text-sm">Mobile Number <span className="text-red-500">*</span></label>
                   <input type="tel" placeholder="10-digit mobile number" value={tutorForm.mobile} onChange={(e) => setTutorForm({...tutorForm, mobile: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
                 </div>
