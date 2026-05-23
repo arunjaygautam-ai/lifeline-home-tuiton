@@ -12,6 +12,7 @@ import { db, handleFirestoreError, OperationType } from '../lib/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 export default function Home() {
+  // Trigger update for GitHub Export
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [studentForm, setStudentForm] = useState({ studentName: '', studentClass: '', subjects: '', school: '', location: '', mobile: '' });
   const [tutorForm, setTutorForm] = useState({ fullName: '', classesTeach: '', subjects: '', experience: '', location: '', mobile: '' });
