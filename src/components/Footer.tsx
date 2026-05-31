@@ -59,7 +59,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-4 text-sm">
               <li className="flex gap-3">
                 <MapPin className="w-5 h-5 text-primary-500 shrink-0" />
-                <span className="leading-relaxed">Mourya colony Beur Akhada,<br />Anisabad, Patna, Bihar 800002</span>
+                <span className="leading-relaxed">Mourya Vihar Colony, Beur Akhada,<br />Anisabad, Patna, Bihar 800002</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary-500 shrink-0" />
