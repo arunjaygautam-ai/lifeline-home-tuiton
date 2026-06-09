@@ -38,8 +38,8 @@ export default function Navbar() {
         )}
       >
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 bg-primary-600 text-white rounded-xl flex items-center justify-center font-heading font-bold text-xl group-hover:scale-105 transition-transform shadow-sm">
-            LH
+          <div className="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform shadow-sm overflow-hidden shrink-0">
+            <img src="/logo.png" alt="LH Logo" className="w-full h-full object-contain" />
           </div>
           <div className="flex flex-col">
             <span className="font-heading font-bold text-xl text-slate-900 leading-tight tracking-tight">Lifeline</span>
