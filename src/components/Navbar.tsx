@@ -25,25 +25,25 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        'fixed top-0 w-full z-50 transition-all duration-300 md:px-8',
-        scrolled ? 'pt-4' : 'pt-0 md:pt-4'
+        'fixed top-0 w-full z-50 transition-all duration-300 md:px-4',
+        scrolled ? 'pt-2' : 'pt-0 md:pt-4'
       )}
     >
       <div 
         className={cn(
           "max-w-7xl mx-auto flex justify-between items-center transition-all duration-300",
           scrolled 
-            ? "bg-white/90 backdrop-blur-md shadow-lg shadow-slate-200/50 border border-slate-100 rounded-full px-6 py-3" 
+            ? "bg-white/90 backdrop-blur-md shadow-lg shadow-slate-200/50 border border-slate-100 rounded-full px-5 py-2" 
             : "bg-transparent px-4 py-5 md:px-0"
         )}
       >
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="h-10 sm:h-12 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden shrink-0">
-            <img src="/logo.png" alt="LH Logo" className="h-full w-auto object-contain" />
+          <div className={cn("flex items-center justify-center group-hover:scale-105 transition-all overflow-hidden shrink-0", scrolled ? "h-8 sm:h-9" : "h-10 sm:h-12")}>
+            <img src="/logo.png?v=6" alt="LH Logo" className="h-full w-auto object-contain" />
           </div>
-          <div className="flex flex-col">
-            <span className="font-heading font-bold text-xl text-slate-900 leading-tight tracking-tight">Lifeline</span>
-            <span className="text-[10px] font-bold text-primary-600 tracking-widest uppercase">Home Tuition</span>
+          <div className="flex flex-col justify-center">
+            <span className={cn("font-heading font-bold text-slate-900 leading-tight tracking-tight transition-all", scrolled ? "text-lg" : "text-xl")}>Lifeline</span>
+            <span className={cn("font-bold text-primary-600 tracking-widest uppercase transition-all", scrolled ? "text-[8px]" : "text-[10px]")}>Home Tuition</span>
           </div>
         </Link>
 
