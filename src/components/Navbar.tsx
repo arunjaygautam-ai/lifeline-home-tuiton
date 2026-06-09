@@ -3,7 +3,6 @@ import { Menu, X, Phone } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { cn } from '../lib/utils';
 import { motion, AnimatePresence } from 'motion/react';
-import logoImg from '../assets/logo.png';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,8 +38,8 @@ export default function Navbar() {
         )}
       >
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-12 h-12 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden shrink-0">
-            <img src={logoImg} alt="LH Logo" className="w-full h-full object-contain" />
+          <div className="h-10 sm:h-12 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden shrink-0">
+            <img src="/logo.png" alt="LH Logo" className="h-full w-auto object-contain" />
           </div>
           <div className="flex flex-col">
             <span className="font-heading font-bold text-xl text-slate-900 leading-tight tracking-tight">Lifeline</span>

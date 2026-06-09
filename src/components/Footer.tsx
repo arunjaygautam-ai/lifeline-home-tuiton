@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Linkedin } from 'lucide-react';
-import logoImg from '../assets/logo.png';
 
 export default function Footer() {
   return (
@@ -11,8 +10,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex flex-col gap-4">
             <Link to="/" className="flex items-center gap-2 mb-2">
-              <div className="w-12 h-12 flex items-center justify-center overflow-hidden shrink-0">
-                <img src={logoImg} alt="LH Logo" className="w-full h-full object-contain" />
+              <div className="h-12 flex items-center justify-center overflow-hidden shrink-0">
+                <img src="/logo.png" alt="LH Logo" className="h-full w-auto object-contain" />
               </div>
               <div className="flex flex-col">
                 <span className="font-heading font-bold text-xl text-white leading-tight">Lifeline</span>
