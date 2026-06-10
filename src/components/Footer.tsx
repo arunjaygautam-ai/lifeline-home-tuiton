@@ -10,8 +10,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex flex-col gap-4">
             <Link to="/" className="flex items-center gap-2 mb-2">
-              <div className="h-12 flex items-center justify-center overflow-hidden shrink-0">
-                <img src="/logo.png?v=6" alt="LH Logo" className="h-full w-auto object-contain" />
+              <div className="h-12 flex items-center justify-center shrink-0">
+                <img src="/logo.png?v=8" alt="LH Logo" className="h-full w-auto object-contain py-1" />
               </div>
               <div className="flex flex-col">
                 <span className="font-heading font-bold text-xl text-white leading-tight">Lifeline</span>
