@@ -33,7 +33,7 @@ export default function Navbar() {
         className={cn(
           "max-w-7xl mx-auto flex justify-between items-center transition-all duration-300",
           scrolled 
-            ? "bg-white/90 backdrop-blur-md shadow-lg shadow-slate-200/50 border border-slate-100 rounded-full px-5 py-2.5 sm:px-6 sm:py-3" 
+            ? "bg-white/90 backdrop-blur-md shadow-lg shadow-slate-200/50 border border-slate-100 rounded-full px-5 py-3 sm:px-6 sm:py-3.5" 
             : "bg-transparent px-4 py-5 md:px-0"
         )}
       >
@@ -83,7 +83,7 @@ export default function Navbar() {
           </a>
           <a
             href="/#parents-inquiry"
-            className="bg-primary-600 text-white px-5 py-2 lg:px-6 lg:py-2.5 rounded-full text-sm font-bold hover:bg-slate-900 transition-colors shadow-lg shadow-primary-600/20 hover:shadow-slate-900/20 hover:-translate-y-0.5 whitespace-nowrap shrink-0"
+            className="bg-primary-600 text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-slate-900 transition-colors shadow-lg shadow-primary-600/20 hover:shadow-slate-900/20 hover:-translate-y-0.5 whitespace-nowrap shrink-0"
           >
             Book Demo
           </a>
