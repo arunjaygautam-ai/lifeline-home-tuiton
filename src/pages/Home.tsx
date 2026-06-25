@@ -267,9 +267,12 @@ export default function Home() {
       {/* TESTIMONIALS */}
       <section className="py-20 bg-slate-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h2 className="text-3xl md:text-3xl font-bold text-slate-900 text-center mb-16">
+          <h2 className="text-3xl md:text-3xl font-bold text-slate-900 text-center mb-4">
             <span className="text-[#ec2d5e]">Our</span> Testimonials
           </h2>
+          <p className="text-center text-slate-600 font-semibold mb-16 text-lg">
+            Discover why we are recognized as the <span className="text-slate-900 font-bold">best tuition bureau in Patna</span> and <span className="text-slate-900 font-bold">top tuition bureau in Patna</span>.
+          </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white rounded-2xl p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-slate-100 flex flex-col justify-between items-center text-center">

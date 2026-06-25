@@ -54,7 +54,7 @@ ${form.message}`;
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900 text-lg">Email Address</h4>
-                    <a href="mailto:info@lifelinetuition.com" className="text-slate-600 hover:text-primary-600 transition-colors">info@lifelinetuition.com</a>
+                    <a href="mailto:lifelinehometuition@gmail.com" className="text-slate-600 hover:text-primary-600 transition-colors">lifelinehometuition@gmail.com</a>
                   </div>
                 </div>
                 <div className="flex gap-4 items-start">
