@@ -78,7 +78,7 @@ export default function Home() {
           
           <div className="text-center mb-6 md:mb-8">
             <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold font-heading text-slate-900 leading-[1.2] mb-3">
-              Top Home Tuition Bureau in <span className="text-[#ec2d5e]">Patna</span>
+              Best Home Tuition Bureau of <span className="text-[#ec2d5e]">Patna</span>
             </h1>
             <p className="text-lg md:text-xl font-bold text-[#ec2d5e]">
               1-on-1 Classes | All Classes and All Subjects | Serving Patna since 1990
