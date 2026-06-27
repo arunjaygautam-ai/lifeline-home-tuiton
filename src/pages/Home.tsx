@@ -69,7 +69,7 @@ export default function Home() {
       
       {/* Top Banner exactly like the screenshot */}
       <div className="w-full bg-[#ec2d5e] text-white text-center py-2.5 font-bold md:text-lg">
-        Home Tuition in Patna
+        Top Home Tuition Bureau of Patna
       </div>
 
       {/* HERO SECTION */}
@@ -78,7 +78,7 @@ export default function Home() {
           
           <div className="text-center mb-6 md:mb-8">
             <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold font-heading text-slate-900 leading-[1.2] mb-3">
-              Top-Rated Home Tuition in <span className="text-[#ec2d5e]">Patna</span>
+              Top Home Tuition Bureau in <span className="text-[#ec2d5e]">Patna</span>
             </h1>
             <p className="text-lg md:text-xl font-bold text-[#ec2d5e]">
               1-on-1 Classes | All Classes and All Subjects | Serving Patna since 1990
@@ -271,7 +271,7 @@ export default function Home() {
             <span className="text-[#ec2d5e]">Our</span> Testimonials
           </h2>
           <p className="text-center text-slate-600 font-semibold mb-16 text-lg">
-            Discover why we are recognized as the <span className="text-slate-900 font-bold">best tuition bureau in Patna</span> and <span className="text-slate-900 font-bold">top tuition bureau in Patna</span>.
+            Discover why we are recognized as the <span className="text-slate-900 font-bold">best home tuition bureau in Patna</span> and <span className="text-slate-900 font-bold">top home tuition bureau in Patna</span>.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
