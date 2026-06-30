@@ -63,7 +63,7 @@ ${form.message}`;
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900 text-lg">Office Address</h4>
-                    <p className="text-slate-600 leading-relaxed">Mourya Vihar Colony, Beur Akhada,<br/>Anisabad,<br/>Patna, Bihar 800002</p>
+                    <p className="text-slate-600 leading-relaxed">Road No 4, Ranipur, Phulwari Sharif,<br/>Patna, Bihar 800002</p>
                   </div>
                 </div>
               </div>
@@ -72,7 +72,7 @@ ${form.message}`;
             {/* Google Map Embed */}
             <div className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm h-64 relative bg-slate-200">
                <iframe 
-                src="https://maps.google.com/maps?q=Lifeline%20Home%20Tuition,%20Mourya%20Vihar%20Colony,%20Beur%20Akhada,%20Anisabad,%20Patna,%20Bihar%20800002&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                src="https://maps.google.com/maps?q=Lifeline%20Home%20Tuition,%20Road%20No%204,%20Ranipur,%20Phulwari%20Sharif,%20Patna,%20Bihar%20800002&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
