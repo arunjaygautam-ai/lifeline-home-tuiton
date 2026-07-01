@@ -1,4 +1,6 @@
 import sharp from 'sharp';
+import pngToIco from 'png-to-ico';
+import fs from 'fs';
 
 async function processIcons() {
   const inputPath = 'public/logo.png';
@@ -18,9 +20,8 @@ async function processIcons() {
       .toFile(`public/apple-touch-icon.png`);
 
     // Create standard favicon.ico
-    await trimmed.clone()
-      .resize(48, 48, { fit: 'contain', background: {r:255,g:255,b:255,alpha:0} })
-      .toFile(`public/favicon.ico`);
+    const buf = await pngToIco('public/favicon-48x48.png');
+    fs.writeFileSync('public/favicon.ico', buf);
 
     console.log('Icons generated');
   } catch (err) { console.error(err); }
