@@ -7,16 +7,19 @@ async function processIcons() {
     
     const sizes = [48, 96, 144, 192, 512];
     for (const size of sizes) {
-      await trimmed.resize(size, size, { fit: 'contain', background: {r:255,g:255,b:255,alpha:0} })
+      await trimmed.clone()
+        .resize(size, size, { fit: 'contain', background: {r:255,g:255,b:255,alpha:0} })
         .toFile(`public/favicon-${size}x${size}.png`);
     }
     
     // Create apple-touch-icon
-    await trimmed.resize(180, 180, { fit: 'contain', background: {r:255,g:255,b:255,alpha:0} })
+    await trimmed.clone()
+      .resize(180, 180, { fit: 'contain', background: {r:255,g:255,b:255,alpha:0} })
       .toFile(`public/apple-touch-icon.png`);
 
     // Create standard favicon.ico
-    await trimmed.resize(48, 48, { fit: 'contain', background: {r:255,g:255,b:255,alpha:0} })
+    await trimmed.clone()
+      .resize(48, 48, { fit: 'contain', background: {r:255,g:255,b:255,alpha:0} })
       .toFile(`public/favicon.ico`);
 
     console.log('Icons generated');
