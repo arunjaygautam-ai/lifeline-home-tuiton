@@ -15,6 +15,10 @@ async function processIcons() {
     await trimmed.resize(180, 180, { fit: 'contain', background: {r:255,g:255,b:255,alpha:0} })
       .toFile(`public/apple-touch-icon.png`);
 
+    // Create standard favicon.ico
+    await trimmed.resize(48, 48, { fit: 'contain', background: {r:255,g:255,b:255,alpha:0} })
+      .toFile(`public/favicon.ico`);
+
     console.log('Icons generated');
   } catch (err) { console.error(err); }
 }
