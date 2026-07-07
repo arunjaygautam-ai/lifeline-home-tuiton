@@ -65,31 +65,19 @@ export default function Admin() {
     }
   };
 
-  const [isRegistering, setIsRegistering] = useState(false);
-
-  const handleEmailLogin = async (e: React.FormEvent) => {
+  const handleEmailLogin = async (e: import("react").FormEvent) => {
     e.preventDefault();
     setLoginError('');
     try {
-      if (isRegistering) {
-        if (email.toLowerCase() !== 'arunjaygautam@gmail.com') {
-          setLoginError('Only arunjaygautam@gmail.com is authorized to register as admin.');
-          return;
-        }
-        await createUserWithEmailAndPassword(auth, email, password);
-      } else {
-        await signInWithEmailAndPassword(auth, email, password);
-      }
+      await signInWithEmailAndPassword(auth, email, password);
     } catch(err: any) {
       console.error(err);
       if (err.code === 'auth/invalid-credential' || err.code === 'auth/user-not-found') {
-        setLoginError('Invalid credentials. If this is your first time, click "Register Instead" below.');
-      } else if (err.code === 'auth/email-already-in-use') {
-        setLoginError('An account with this email already exists. Please sign in instead.');
+        setLoginError('Invalid credentials. Check your email and password.');
       } else if (err.code === 'auth/operation-not-allowed') {
         setLoginError('Email/Password sign-in is not enabled. Please enable it in your Firebase Console.');
       } else {
-        setLoginError(err.message || 'Login/Register failed. Make sure you have enabled Email/Password auth in Firebase Console.');
+        setLoginError(err.message || 'Login failed. Make sure you have created the user in Firebase Console.');
       }
     }
   }
@@ -150,7 +138,7 @@ export default function Admin() {
               <input type="password" value={password} onChange={e => setPassword(e.target.value)} className="w-full px-4 py-2 border border-slate-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:outline-none" required />
             </div>
             <button type="submit" className="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-4 rounded-xl transition-colors mt-2">
-              {isRegistering ? 'Register Admin' : 'Sign in with Password'}
+              Sign in with Password
             </button>
           </form>
           
@@ -159,14 +147,7 @@ export default function Admin() {
             onClick={handleResetPassword}
             className="w-full text-center mt-4 text-sm font-medium text-primary-600 hover:text-primary-700 transition-colors"
           >
-            Forgot Password? Set a new one here
-          </button>
-
-          <button 
-            onClick={() => setIsRegistering(!isRegistering)} 
-            className="w-full text-center mt-2 text-sm text-slate-500 hover:text-primary-600 transition-colors"
-          >
-            {isRegistering ? 'Already have an account? Sign in' : "First time? Register instead"}
+            Forgot Password?
           </button>
         </div>
       </div>

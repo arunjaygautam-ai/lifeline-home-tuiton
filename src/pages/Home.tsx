@@ -18,7 +18,7 @@ export default function Home() {
   const [isSubmittingStudent, setIsSubmittingStudent] = useState(false);
   const [isSubmittingTutor, setIsSubmittingTutor] = useState(false);
 
-  const handleStudentSubmit = async (e: React.FormEvent) => {
+  const handleStudentSubmit = async (e: import("react").FormEvent) => {
     e.preventDefault();
     if (!studentForm.studentName || !studentForm.mobile) return alert("Please fill all required fields");
     setIsSubmittingStudent(true);
@@ -37,7 +37,7 @@ export default function Home() {
     }
   };
 
-  const handleTutorSubmit = async (e: React.FormEvent) => {
+  const handleTutorSubmit = async (e: import("react").FormEvent) => {
     e.preventDefault();
     if (!tutorForm.fullName || !tutorForm.mobile) return alert("Please fill all required fields");
     setIsSubmittingTutor(true);

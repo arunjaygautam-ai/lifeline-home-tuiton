@@ -5,7 +5,7 @@ import { useState } from 'react';
 export default function Contact() {
   const [form, setForm] = useState({ name: '', phone: '', email: '', message: '' });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: import("react").FormEvent) => {
     e.preventDefault();
     const text = `Hi! I would like to get in touch.
 Name: ${form.name}
