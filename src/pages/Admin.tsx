@@ -72,6 +72,10 @@ export default function Admin() {
     setLoginError('');
     try {
       if (isRegistering) {
+        if (email.toLowerCase() !== 'arunjaygautam@gmail.com') {
+          setLoginError('Only arunjaygautam@gmail.com is authorized to register as admin.');
+          return;
+        }
         await createUserWithEmailAndPassword(auth, email, password);
       } else {
         await signInWithEmailAndPassword(auth, email, password);
@@ -80,6 +84,10 @@ export default function Admin() {
       console.error(err);
       if (err.code === 'auth/invalid-credential' || err.code === 'auth/user-not-found') {
         setLoginError('Invalid credentials. If this is your first time, click "Register Instead" below.');
+      } else if (err.code === 'auth/email-already-in-use') {
+        setLoginError('An account with this email already exists. Please sign in instead.');
+      } else if (err.code === 'auth/operation-not-allowed') {
+        setLoginError('Email/Password sign-in is not enabled. Please enable it in your Firebase Console.');
       } else {
         setLoginError(err.message || 'Login/Register failed. Make sure you have enabled Email/Password auth in Firebase Console.');
       }
