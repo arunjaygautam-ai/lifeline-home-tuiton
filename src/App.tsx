@@ -10,6 +10,7 @@ import ScrollToTop from './components/ScrollToTop';
 import AnalyticsTracker from './components/AnalyticsTracker';
 
 const gaMeasurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
+console.log("GA4 Measurement ID loaded:", gaMeasurementId || "Not found! Please ensure your secret is exactly named VITE_GA_MEASUREMENT_ID");
 if (gaMeasurementId) {
   ReactGA.initialize(gaMeasurementId);
 }
