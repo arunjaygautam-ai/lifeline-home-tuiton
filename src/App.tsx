@@ -9,8 +9,7 @@ import Admin from './pages/Admin';
 import ScrollToTop from './components/ScrollToTop';
 import AnalyticsTracker from './components/AnalyticsTracker';
 
-const gaMeasurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
-console.log("GA4 Measurement ID loaded:", gaMeasurementId || "Not found! Please ensure your secret is exactly named VITE_GA_MEASUREMENT_ID");
+const gaMeasurementId = import.meta.env.VITE_GA_MEASUREMENT_ID || "G-7T950VPZMF";
 if (gaMeasurementId) {
   ReactGA.initialize(gaMeasurementId);
 }

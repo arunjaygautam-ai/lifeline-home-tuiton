@@ -6,8 +6,9 @@ export default function AnalyticsTracker() {
   const location = useLocation();
 
   useEffect(() => {
+    const gaMeasurementId = import.meta.env.VITE_GA_MEASUREMENT_ID || "G-7T950VPZMF";
     // Only track if GA is initialized
-    if (import.meta.env.VITE_GA_MEASUREMENT_ID) {
+    if (gaMeasurementId) {
       ReactGA.send({ hitType: "pageview", page: location.pathname + location.search });
     }
   }, [location]);
