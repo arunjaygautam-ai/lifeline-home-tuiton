@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ReactGA from 'react-ga4';
 import Layout from './components/layout/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -6,11 +7,18 @@ import Contact from './pages/Contact';
 import Services from './pages/Services';
 import Admin from './pages/Admin';
 import ScrollToTop from './components/ScrollToTop';
+import AnalyticsTracker from './components/AnalyticsTracker';
+
+const gaMeasurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
+if (gaMeasurementId) {
+  ReactGA.initialize(gaMeasurementId);
+}
 
 export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <AnalyticsTracker />
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
