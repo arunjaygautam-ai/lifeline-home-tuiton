@@ -11,8 +11,17 @@ export default function Navbar() {
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 25);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -27,24 +36,24 @@ export default function Navbar() {
     <header
       className={cn(
         'fixed top-0 w-full z-50 transition-all duration-300 md:px-4',
-        scrolled ? 'pt-2' : 'pt-0 md:pt-4'
+        scrolled ? 'pt-2 md:pt-3' : 'pt-0 md:pt-4'
       )}
     >
       <div 
         className={cn(
           "max-w-7xl mx-auto flex justify-between items-center transition-all duration-300",
           scrolled 
-            ? "bg-white/90 backdrop-blur-md shadow-lg shadow-slate-200/50 border border-slate-100 rounded-full px-5 py-3 sm:px-6 sm:py-3.5" 
-            : "bg-transparent px-4 py-5 md:px-0"
+            ? "bg-white/95 backdrop-blur-md shadow-lg shadow-slate-200/50 border border-slate-100 rounded-full px-5 py-2.5 sm:px-6 sm:py-3" 
+            : "bg-transparent px-4 py-4 md:px-0"
         )}
       >
         <Link to="/" className="flex items-center gap-2 group shrink-0">
-          <div className={cn("flex items-center justify-center group-hover:scale-105 transition-all shrink-0", scrolled ? "h-8 sm:h-9" : "h-10 sm:h-12")}>
-            <img src={logoImg} alt="Lifeline Home Tuition Logo" className="h-full w-auto object-contain py-1 rounded-xl" onError={(e) => { e.currentTarget.src = '/logo.png'; }} />
+          <div className="h-9 sm:h-11 w-auto flex items-center justify-center group-hover:scale-105 transition-transform shrink-0">
+            <img src={logoImg} alt="Lifeline Home Tuition Logo" className="h-full w-auto object-contain py-0.5 rounded-xl" onError={(e) => { e.currentTarget.src = '/logo.png'; }} />
           </div>
           <div className="flex flex-col justify-center">
-            <span className={cn("font-heading font-bold text-slate-900 leading-tight tracking-tight transition-all", scrolled ? "text-lg" : "text-xl")}>Lifeline</span>
-            <span className={cn("font-bold text-primary-600 tracking-widest uppercase transition-all", scrolled ? "text-[8px]" : "text-[10px]")}>Home Tuition</span>
+            <span className="font-heading font-bold text-slate-900 leading-tight tracking-tight text-lg sm:text-xl">Lifeline</span>
+            <span className="font-bold text-primary-600 tracking-widest uppercase text-[9px] sm:text-[10px]">Home Tuition</span>
           </div>
         </Link>
 
@@ -61,7 +70,7 @@ export default function Navbar() {
             >
               {link.name}
               {location.pathname === link.path && (
-                <motion.div layoutId="underline" className="absolute -bottom-1 left-0 w-full h-[2px] bg-primary-600 rounded-full" />
+                <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-primary-600 rounded-full" />
               )}
             </Link>
           ))}

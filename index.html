@@ -10,13 +10,15 @@
     <meta name="keywords" content="home tuition patna, private tutor patna, online tuition patna, cbse tutor, icse tutor, math tutor patna, science tutor patna" />
     
     <!-- Favicon & Manifest -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
-    <link rel="shortcut icon" href="/favicon.ico?v=2" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png?v=2" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png?v=2" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#4f46e5" />
     
@@ -34,7 +36,7 @@
     <meta name="twitter:description" content="Trusted Home Tutors in Patna for Every Class & Subject." />
     <meta name="twitter:image" content="https://lifelinehometuition.com/banner.jpeg" />
 
-    <!-- Schema Markup for Local Business & Banner ImageObject -->
+    <!-- Schema Markup for Google Search (LocalBusiness, EducationalOrganization, WebSite, Service & FAQPage) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -43,39 +45,118 @@
             "@type": ["EducationalOrganization", "LocalBusiness"],
             "@id": "https://lifelinehometuition.com/#organization",
             "name": "Lifeline Home Tuition",
+            "alternateName": "Best Home Tuition Bureau of Patna",
             "url": "https://lifelinehometuition.com",
             "logo": {
               "@type": "ImageObject",
               "url": "https://lifelinehometuition.com/logo.png"
             },
-            "image": {
-              "@type": "ImageObject",
-              "@id": "https://lifelinehometuition.com/#bannerImage",
-              "url": "https://lifelinehometuition.com/banner.jpeg",
-              "contentUrl": "https://lifelinehometuition.com/banner.jpeg",
-              "caption": "Lifeline Home Tuition Banner - Best Home Tutors in Patna for CBSE, ICSE, Bihar Board, IIT-JEE & NEET"
-            },
+            "image": [
+              "https://lifelinehometuition.com/logo.png",
+              "https://lifelinehometuition.com/banner.jpeg"
+            ],
             "description": "Trusted Home Tutors in Patna for Every Class & Subject. Best Home Tuition Bureau of Patna providing expert tutors for CBSE, ICSE, Bihar Board, IIT-JEE, and NEET.",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "Road No 4, Ranipur, Phulwari Sharif",
               "addressLocality": "Patna",
-              "addressRegion": "Bihar",
+              "addressRegion": "BR",
               "postalCode": "800002",
               "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "25.5683",
+              "longitude": "85.0782"
             },
             "telephone": "+919934985213",
             "email": "lifelinehometuition@gmail.com",
             "priceRange": "₹₹",
             "areaServed": {
               "@type": "City",
-              "name": "Patna"
+              "name": "Patna",
+              "containedInPlace": {
+                "@type": "State",
+                "name": "Bihar"
+              }
             },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "07:00",
+                "closes": "21:00"
+              }
+            ],
             "aggregateRating": {
               "@type": "AggregateRating",
               "ratingValue": "4.9",
-              "reviewCount": "250"
+              "reviewCount": "250",
+              "bestRating": "5",
+              "worstRating": "1"
             }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://lifelinehometuition.com/#website",
+            "url": "https://lifelinehometuition.com",
+            "name": "Lifeline Home Tuition",
+            "description": "Best Home Tuition Bureau in Patna",
+            "publisher": {
+              "@id": "https://lifelinehometuition.com/#organization"
+            }
+          },
+          {
+            "@type": "Service",
+            "@id": "https://lifelinehometuition.com/#service",
+            "name": "1-on-1 Home Tuition Services in Patna",
+            "provider": {
+              "@id": "https://lifelinehometuition.com/#organization"
+            },
+            "serviceType": "Home Tutoring",
+            "areaServed": {
+              "@type": "City",
+              "name": "Patna"
+            },
+            "description": "Personalized 1-on-1 home tuition in Patna for CBSE, ICSE, and Bihar Board students from Class 1 to 12, as well as competitive exams like IIT-JEE and NEET."
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://lifelinehometuition.com/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How can I book a home tutor in Patna with Lifeline Home Tuition?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "You can easily book a home tutor by calling +91 9934985213 or submitting the 'Book Demo' form on our website. We analyze your requirements and assign a qualified home tutor in Patna within 24 hours."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is there a free demo class available for home tuition?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, Lifeline Home Tuition provides a free demo class so parents and students can evaluate the tutor's subject expertise and teaching methodology before committing."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which classes and education boards do you cover in Patna?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We provide home tutors for Class 1 through Class 12 across CBSE, ICSE, and Bihar Board (BSEB), plus specialized coaching for IIT-JEE, NEET, and Commerce."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are the home tutors background verified?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, all tutors undergo strict academic verification, identity verification, and background checks prior to home teaching assignments."
+                }
+              }
+            ]
           },
           {
             "@type": "ImageObject",
