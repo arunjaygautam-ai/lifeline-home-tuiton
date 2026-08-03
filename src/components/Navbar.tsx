@@ -3,7 +3,6 @@ import { Menu, X, Phone } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { cn } from '../lib/utils';
 import { motion, AnimatePresence } from 'motion/react';
-import logoImg from '../assets/logo.png';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,14 +10,12 @@ export default function Navbar() {
   const location = useLocation();
 
   useEffect(() => {
-    let ticking = false;
     const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          setScrolled(window.scrollY > 25);
-          ticking = false;
-        });
-        ticking = true;
+      const scrollY = window.scrollY;
+      if (scrollY > 40) {
+        setScrolled(true);
+      } else if (scrollY < 10) {
+        setScrolled(false);
       }
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -47,9 +44,15 @@ export default function Navbar() {
             : "bg-transparent px-4 py-4 md:px-0"
         )}
       >
-        <Link to="/" className="flex items-center gap-2 group shrink-0">
-          <div className="h-9 sm:h-11 w-auto flex items-center justify-center group-hover:scale-105 transition-transform shrink-0">
-            <img src={logoImg} alt="Lifeline Home Tuition Logo" className="h-full w-auto object-contain py-0.5 rounded-xl" onError={(e) => { e.currentTarget.src = '/logo.png'; }} />
+        <Link to="/" className="flex items-center gap-2.5 group shrink-0">
+          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white flex items-center justify-center group-hover:scale-105 transition-transform shrink-0 shadow-sm border border-slate-100 p-0.5">
+            <img
+              src="/logo.png"
+              alt="Lifeline Home Tuition Logo"
+              width={44}
+              height={44}
+              className="w-full h-full object-contain rounded-lg"
+            />
           </div>
           <div className="flex flex-col justify-center">
             <span className="font-heading font-bold text-slate-900 leading-tight tracking-tight text-lg sm:text-xl">Lifeline</span>

@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Linkedin } from 'lucide-react';
-import logoImg from '../assets/logo.png';
 
 export default function Footer() {
   return (
@@ -10,9 +9,15 @@ export default function Footer() {
           
           {/* Brand */}
           <div className="flex flex-col gap-4">
-            <Link to="/" className="flex items-center gap-2 mb-2">
-              <div className="h-12 flex items-center justify-center shrink-0">
-                <img src={logoImg} alt="Lifeline Home Tuition Logo" className="h-full w-auto object-contain py-1 rounded-xl" onError={(e) => { e.currentTarget.src = '/logo.png'; }} />
+            <Link to="/" className="flex items-center gap-2.5 mb-2">
+              <div className="w-11 h-11 rounded-xl bg-slate-800 flex items-center justify-center shrink-0 border border-slate-700 p-0.5">
+                <img
+                  src="/logo.png"
+                  alt="Lifeline Home Tuition Logo"
+                  width={44}
+                  height={44}
+                  className="w-full h-full object-contain rounded-lg"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-heading font-bold text-xl text-white leading-tight">Lifeline</span>
