@@ -3,6 +3,7 @@ import { Menu, X, Phone } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { cn } from '../lib/utils';
 import { motion, AnimatePresence } from 'motion/react';
+import logoImg from '../assets/logo.png';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,11 +48,21 @@ export default function Navbar() {
         <Link to="/" className="flex items-center gap-2.5 group shrink-0">
           <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white flex items-center justify-center group-hover:scale-105 transition-transform shrink-0 shadow-sm border border-slate-100 p-0.5">
             <img
-              src="/logo.png"
+              src={logoImg}
               alt="Lifeline Home Tuition Logo"
               width={44}
               height={44}
               className="w-full h-full object-contain rounded-lg"
+              onError={(e) => {
+                const target = e.currentTarget;
+                if (!target.dataset.failed) {
+                  target.dataset.failed = '1';
+                  target.src = '/logo.png';
+                } else if (target.dataset.failed === '1') {
+                  target.dataset.failed = '2';
+                  target.src = '/favicon-128x128.png';
+                }
+              }}
             />
           </div>
           <div className="flex flex-col justify-center">

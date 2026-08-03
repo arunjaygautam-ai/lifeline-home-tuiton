@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Linkedin } from 'lucide-react';
+import logoImg from '../assets/logo.png';
 
 export default function Footer() {
   return (
@@ -12,11 +13,21 @@ export default function Footer() {
             <Link to="/" className="flex items-center gap-2.5 mb-2">
               <div className="w-11 h-11 rounded-xl bg-slate-800 flex items-center justify-center shrink-0 border border-slate-700 p-0.5">
                 <img
-                  src="/logo.png"
+                  src={logoImg}
                   alt="Lifeline Home Tuition Logo"
                   width={44}
                   height={44}
                   className="w-full h-full object-contain rounded-lg"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.dataset.failed) {
+                      target.dataset.failed = '1';
+                      target.src = '/logo.png';
+                    } else if (target.dataset.failed === '1') {
+                      target.dataset.failed = '2';
+                      target.src = '/favicon-128x128.png';
+                    }
+                  }}
                 />
               </div>
               <div className="flex flex-col">
