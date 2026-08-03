@@ -94,7 +94,7 @@ export default function Home() {
               className="w-full bg-white rounded-2xl overflow-hidden shadow-lg"
             >
               <img 
-                src="/banner.png" 
+                src="/banner.jpg" 
                 alt="Lifeline Home Tuition - Top Rated Home Tutors in Patna" 
                 className="w-full h-auto object-contain" 
               />
