@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lifelinetuition.com/sitemap.xml
+Sitemap: https://lifelinehometuition.com/sitemap.xml
