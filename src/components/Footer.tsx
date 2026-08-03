@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Linkedin } from 'lucide-react';
 import logoImg from '../assets/logo.png';
+import { FALLBACK_LOGO_BASE64 } from '../lib/logoFallback';
 
 export default function Footer() {
   return (
@@ -26,6 +27,9 @@ export default function Footer() {
                     } else if (target.dataset.failed === '1') {
                       target.dataset.failed = '2';
                       target.src = '/favicon-128x128.png';
+                    } else if (target.dataset.failed === '2') {
+                      target.dataset.failed = '3';
+                      target.src = FALLBACK_LOGO_BASE64;
                     }
                   }}
                 />
