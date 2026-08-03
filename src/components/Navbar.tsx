@@ -39,7 +39,7 @@ export default function Navbar() {
       >
         <Link to="/" className="flex items-center gap-2 group shrink-0">
           <div className={cn("flex items-center justify-center group-hover:scale-105 transition-all shrink-0", scrolled ? "h-8 sm:h-9" : "h-10 sm:h-12")}>
-            <img src="/logo.png.jpeg" alt="LH Logo" className="h-full w-auto object-contain py-1 rounded-xl" />
+            <img src="/logo.png?v=16" alt="LH Logo" className="h-full w-auto object-contain py-1 rounded-xl" />
           </div>
           <div className="flex flex-col justify-center">
             <span className={cn("font-heading font-bold text-slate-900 leading-tight tracking-tight transition-all", scrolled ? "text-lg" : "text-xl")}>Lifeline</span>
