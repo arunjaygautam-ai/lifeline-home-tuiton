@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <Link to="/" className="flex items-center gap-2 mb-2">
               <div className="h-12 flex items-center justify-center shrink-0">
-                <img src="/logo.png?v=16" alt="LH Logo" className="h-full w-auto object-contain py-1 rounded-xl" />
+                <img src="/logo.png?v=17" alt="LH Logo" className="h-full w-auto object-contain py-1 rounded-xl" />
               </div>
               <div className="flex flex-col">
                 <span className="font-heading font-bold text-xl text-white leading-tight">Lifeline</span>
