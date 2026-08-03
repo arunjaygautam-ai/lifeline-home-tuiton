@@ -94,9 +94,14 @@ export default function Home() {
               className="w-full bg-white rounded-2xl overflow-hidden shadow-lg"
             >
               <img 
-                src="/banner.jpg" 
+                src="/banner.jpeg" 
+                onError={(e) => {
+                  if (e.currentTarget.src !== window.location.origin + "/banner.jpg") {
+                    e.currentTarget.src = "/banner.jpg";
+                  }
+                }}
                 alt="Lifeline Home Tuition - Top Rated Home Tutors in Patna" 
-                className="w-full h-auto object-contain" 
+                className="w-full h-auto object-contain block rounded-2xl" 
               />
             </motion.div>
 
