@@ -10,6 +10,7 @@ import { useState } from 'react';
 import { cn } from '../lib/utils';
 import { db, handleFirestoreError, OperationType } from '../lib/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import mainHeaderImg from '../assets/main-header-image.png';
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -94,9 +95,16 @@ export default function Home() {
               className="w-full bg-white rounded-2xl overflow-hidden shadow-lg"
             >
               <img 
-                src="/main-header-image.png" 
+                src={mainHeaderImg} 
                 alt="Lifeline Home Tuition - Top Rated Home Tutors in Patna" 
                 className="w-full h-auto object-contain block rounded-2xl" 
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (target.src !== '/main-header-image.png') {
+                    target.src = '/main-header-image.png';
+                  }
+                }}
+                referrerPolicy="no-referrer"
               />
             </motion.div>
 
