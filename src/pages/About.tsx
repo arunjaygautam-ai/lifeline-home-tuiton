@@ -18,7 +18,7 @@ export default function About() {
             animate={{ opacity: 1, x: 0 }}
             className="rounded-3xl overflow-hidden shadow-xl"
           >
-            <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Education" className="w-full h-[500px] object-cover" referrerPolicy="no-referrer" />
+            <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Education" className="w-full h-[500px] object-cover" />
           </motion.div>
 
           <motion.div 
