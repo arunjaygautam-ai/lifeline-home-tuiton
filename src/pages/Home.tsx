@@ -67,13 +67,13 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full overflow-hidden">
       
-      {/* Top Banner exactly like the screenshot */}
+      {/* Top Banner */}
       <div className="w-full bg-[#ec2d5e] text-white text-center py-2.5 font-bold md:text-lg">
         Top Home Tuition Bureau of Patna
       </div>
 
       {/* HERO SECTION */}
-      <section className="relative w-full pt-6 pb-10 bg-white overflow-hidden">
+      <section className="relative w-full pt-6 pb-6 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="text-center mb-6 md:mb-8">
@@ -107,58 +107,106 @@ export default function Home() {
               />
             </motion.div>
 
-            {/* Right Form Side */}
-            <motion.div 
-              id="parents-inquiry"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="w-full md:max-w-xl mx-auto bg-[#7a52a3] rounded-2xl p-4 md:p-6 shadow-xl text-white"
-            >
-              <h2 className="text-xl font-bold text-center mb-4" style={{ color: 'white' }}>Parents Inquiry</h2>
-              <form className="flex flex-col gap-3" onSubmit={handleStudentSubmit}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  <div>
-                    <label className="font-bold mb-1 block text-sm">Student's Name <span className="text-red-500">*</span></label>
-                    <input type="text" placeholder="Enter Student's name" value={studentForm.studentName} onChange={(e) => setStudentForm({...studentForm, studentName: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+            {/* Side-by-Side Inquiry Forms (Stacked on Mobile) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+              
+              {/* Parents Inquiry Form */}
+              <motion.div 
+                id="parents-inquiry"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="w-full bg-[#7a52a3] rounded-2xl p-4 md:p-6 shadow-xl text-white scroll-mt-24"
+              >
+                <h2 className="text-xl font-bold text-center mb-4" style={{ color: 'white' }}>Parents Inquiry</h2>
+                <form className="flex flex-col gap-3" onSubmit={handleStudentSubmit}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div>
+                      <label className="font-bold mb-1 block text-sm">Student's Name <span className="text-red-500">*</span></label>
+                      <input type="text" placeholder="Enter Student's name" value={studentForm.studentName} onChange={(e) => setStudentForm({...studentForm, studentName: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                    </div>
+                    <div>
+                      <label className="font-bold mb-1 block text-sm">Student Class <span className="text-red-500">*</span></label>
+                      <input type="text" placeholder="Student Class" value={studentForm.studentClass} onChange={(e) => setStudentForm({...studentForm, studentClass: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                    </div>
+                    <div>
+                      <label className="font-bold mb-1 block text-sm">Subjects you want to study <span className="text-red-500">*</span></label>
+                      <input type="text" placeholder="Subject you want to study" value={studentForm.subjects} onChange={(e) => setStudentForm({...studentForm, subjects: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                    </div>
+                    <div>
+                      <label className="font-bold mb-1 block text-sm">School <span className="text-red-500">*</span></label>
+                      <input type="text" placeholder="School Name" value={studentForm.school} onChange={(e) => setStudentForm({...studentForm, school: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                    </div>
+                    <div>
+                      <label className="font-bold mb-1 block text-sm">Location in Patna <span className="text-red-500">*</span></label>
+                      <input type="text" placeholder="Location in Patna" value={studentForm.location} onChange={(e) => setStudentForm({...studentForm, location: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                    </div>
+                    <div>
+                      <label className="font-bold mb-1 block text-sm">Mobile Number <span className="text-red-500">*</span></label>
+                      <input type="tel" placeholder="10-digit mobile number" value={studentForm.mobile} onChange={(e) => setStudentForm({...studentForm, mobile: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                    </div>
                   </div>
-                  <div>
-                    <label className="font-bold mb-1 block text-sm">Student Class <span className="text-red-500">*</span></label>
-                    <input type="text" placeholder="Student Class" value={studentForm.studentClass} onChange={(e) => setStudentForm({...studentForm, studentClass: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                  <div className="flex items-center gap-2 mt-1">
+                    <input type="checkbox" id="terms-parents" className="w-4 h-4 rounded text-[#ec2d5e]" required defaultChecked />
+                    <label htmlFor="terms-parents" className="text-xs font-medium text-white cursor-pointer">
+                      Terms and Conditions applied
+                    </label>
                   </div>
-                  <div>
-                    <label className="font-bold mb-1 block text-sm">Subjects you want to study <span className="text-red-500">*</span></label>
-                    <input type="text" placeholder="Subject you want to study" value={studentForm.subjects} onChange={(e) => setStudentForm({...studentForm, subjects: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                  <button type="submit" disabled={isSubmittingStudent} className="w-full bg-[#ec2d5e] hover:bg-[#d1214d] text-white font-bold py-2.5 rounded mt-1 transition-colors disabled:opacity-50 text-sm">
+                    {isSubmittingStudent ? 'Submitting...' : 'Submit Enquiry'}
+                  </button>
+                </form>
+              </motion.div>
+
+              {/* Tutor Inquiry Form */}
+              <motion.div 
+                id="tutor-inquiry"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="w-full bg-[#7a52a3] rounded-2xl p-4 md:p-6 shadow-xl text-white scroll-mt-24"
+              >
+                <h2 className="text-xl font-bold text-center mb-4" style={{ color: 'white' }}>Tutor Inquiry</h2>
+                <form className="flex flex-col gap-3" onSubmit={handleTutorSubmit}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div>
+                      <label className="font-bold mb-1 block text-sm">Full Name <span className="text-red-500">*</span></label>
+                      <input type="text" placeholder="Enter Full name" value={tutorForm.fullName} onChange={(e) => setTutorForm({...tutorForm, fullName: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                    </div>
+                    <div>
+                      <label className="font-bold mb-1 block text-sm">Classes You Teach <span className="text-red-500">*</span></label>
+                      <input type="text" placeholder="Class you teach" value={tutorForm.classesTeach} onChange={(e) => setTutorForm({...tutorForm, classesTeach: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                    </div>
+                    <div>
+                      <label className="font-bold mb-1 block text-sm">Subjects you teach <span className="text-red-500">*</span></label>
+                      <input type="text" placeholder="Subjects you teach" value={tutorForm.subjects} onChange={(e) => setTutorForm({...tutorForm, subjects: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                    </div>
+                    <div>
+                      <label className="font-bold mb-1 block text-sm">Experience (in years) <span className="text-red-500">*</span></label>
+                      <input type="text" placeholder="Experience" value={tutorForm.experience} onChange={(e) => setTutorForm({...tutorForm, experience: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                    </div>
+                    <div>
+                      <label className="font-bold mb-1 block text-sm">Location in Patna <span className="text-red-500">*</span></label>
+                      <input type="text" placeholder="Location in Patna" value={tutorForm.location} onChange={(e) => setTutorForm({...tutorForm, location: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                    </div>
+                    <div>
+                      <label className="font-bold mb-1 block text-sm">Mobile Number <span className="text-red-500">*</span></label>
+                      <input type="tel" placeholder="10-digit mobile number" value={tutorForm.mobile} onChange={(e) => setTutorForm({...tutorForm, mobile: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
+                    </div>
                   </div>
-                  <div>
-                    <label className="font-bold mb-1 block text-sm">School <span className="text-red-500">*</span></label>
-                    <input type="text" placeholder="School Name" value={studentForm.school} onChange={(e) => setStudentForm({...studentForm, school: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
-                  </div>
-                  <div>
-                    <label className="font-bold mb-1 block text-sm">Location in Patna <span className="text-red-500">*</span></label>
-                    <input type="text" placeholder="Location in Patna" value={studentForm.location} onChange={(e) => setStudentForm({...studentForm, location: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
-                  </div>
-                  <div>
-                    <label className="font-bold mb-1 block text-sm">Mobile Number <span className="text-red-500">*</span></label>
-                    <input type="tel" placeholder="10-digit mobile number" value={studentForm.mobile} onChange={(e) => setStudentForm({...studentForm, mobile: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
-                  </div>
-                </div>
-                <div className="flex items-center gap-2 mt-1">
-                  <input type="checkbox" id="terms" className="w-4 h-4 rounded text-[#ec2d5e]" required defaultChecked />
-                  <label htmlFor="terms" className="text-xs font-medium text-white cursor-pointer">
-                    Terms and Conditions applied
-                  </label>
-                </div>
-                <button type="submit" disabled={isSubmittingStudent} className="w-full bg-[#ec2d5e] hover:bg-[#d1214d] text-white font-bold py-2.5 rounded mt-1 transition-colors disabled:opacity-50 text-sm">
-                  {isSubmittingStudent ? 'Submitting...' : 'Submit Enquiry'}
-                </button>
-              </form>
-            </motion.div>
+
+                  <button type="submit" disabled={isSubmittingTutor} className="w-full bg-[#ec2d5e] hover:bg-[#d1214d] text-white font-bold py-2.5 rounded mt-2 transition-colors disabled:opacity-50 text-sm">
+                    {isSubmittingTutor ? 'Submitting...' : 'Submit Enquiry'}
+                  </button>
+                </form>
+              </motion.div>
+
+            </div>
+
           </div>
         </div>
       </section>
 
       {/* WHY PARENTS TRUST */}
-      <section className="pt-4 pb-12 bg-white">
+      <section className="pt-12 pb-12 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <h2 className="text-3xl font-bold text-center mb-10 text-slate-900">Why Parents Trust Lifeline Home Tuition</h2>
           
@@ -187,7 +235,7 @@ export default function Home() {
             <p className="text-[#ec2d5e] font-bold text-lg max-w-3xl mx-auto">Trusted, experienced tutor delivering personalized learning right at your doorstep.</p>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-0 bg-[#fffdf0] border border-orange-100">
+          <div className="flex flex-col md:flex-row gap-0 bg-[#fffdf0] border border-orange-100 rounded-2xl overflow-hidden shadow-sm">
             {/* Left Image Side */}
             <div className="w-full md:w-1/2 relative min-h-[400px]">
               <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80" alt="Home Teaching" className="absolute inset-0 w-full h-full object-cover" />
@@ -391,47 +439,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TUTOR ENQUIRY FORM */}
-      <section id="tutor-inquiry" className="py-8 bg-white">
-        <div className="max-w-xl mx-auto px-4">
-          <div className="bg-[#7a52a3] rounded-2xl p-4 md:p-6 shadow-xl text-white">
-            <h2 className="text-xl font-bold text-center mb-4" style={{ color: 'white' }}>Tutor Inquiry</h2>
-            <form className="flex flex-col gap-3" onSubmit={handleTutorSubmit}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <div>
-                  <label className="font-bold mb-1 block text-sm">Full Name <span className="text-red-500">*</span></label>
-                  <input type="text" placeholder="Enter Full name" value={tutorForm.fullName} onChange={(e) => setTutorForm({...tutorForm, fullName: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
-                </div>
-                <div>
-                  <label className="font-bold mb-1 block text-sm">Classes You Teach <span className="text-red-500">*</span></label>
-                  <input type="text" placeholder="Class you teach" value={tutorForm.classesTeach} onChange={(e) => setTutorForm({...tutorForm, classesTeach: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
-                </div>
-                <div>
-                  <label className="font-bold mb-1 block text-sm">Subjects you teach <span className="text-red-500">*</span></label>
-                  <input type="text" placeholder="Subjects you teach" value={tutorForm.subjects} onChange={(e) => setTutorForm({...tutorForm, subjects: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
-                </div>
-                <div>
-                  <label className="font-bold mb-1 block text-sm">Experience (in years) <span className="text-red-500">*</span></label>
-                  <input type="text" placeholder="Experience" value={tutorForm.experience} onChange={(e) => setTutorForm({...tutorForm, experience: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
-                </div>
-                <div>
-                  <label className="font-bold mb-1 block text-sm">Location in Patna <span className="text-red-500">*</span></label>
-                  <input type="text" placeholder="Location in Patna" value={tutorForm.location} onChange={(e) => setTutorForm({...tutorForm, location: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
-                </div>
-                <div>
-                  <label className="font-bold mb-1 block text-sm">Mobile Number <span className="text-red-500">*</span></label>
-                  <input type="tel" placeholder="10-digit mobile number" value={tutorForm.mobile} onChange={(e) => setTutorForm({...tutorForm, mobile: e.target.value})} required className="w-full p-2 rounded text-sm font-medium text-slate-900 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ec2d5e]" />
-                </div>
-              </div>
-
-              <button type="submit" disabled={isSubmittingTutor} className="w-full bg-[#ec2d5e] hover:bg-[#d1214d] text-white font-bold py-2.5 rounded mt-2 transition-colors disabled:opacity-50 text-sm">
-                {isSubmittingTutor ? 'Submitting...' : 'Submit Enquiry'}
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-
       {/* FAQS SECTION */}
       <section className="pt-8 pb-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
@@ -443,12 +450,12 @@ export default function Home() {
             {faqs.map((faq, index) => {
               const isOpen = openFaq === index;
               return (
-                <div key={index} className="border border-slate-200 rounded overflow-hidden shadow-sm">
+                <div key={index} className="border border-slate-200 rounded-xl overflow-hidden shadow-sm">
                   <button 
                     onClick={() => setOpenFaq(isOpen ? null : index)}
                     className={cn(
                       "w-full flex items-center justify-between p-4 text-left font-bold transition-colors",
-                      isOpen ? "bg-black text-white" : "bg-slate-50 text-slate-800 hover:bg-slate-100"
+                      isOpen ? "bg-slate-900 text-white" : "bg-slate-50 text-slate-800 hover:bg-slate-100"
                     )}
                   >
                     <span className="flex items-center gap-2">
@@ -457,7 +464,7 @@ export default function Home() {
                     {isOpen ? <ChevronUp className="w-5 h-5 text-blue-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
                   </button>
                   {isOpen && (
-                    <div className="p-4 bg-white text-slate-800 font-bold flex items-start gap-3 border-t border-slate-100">
+                    <div className="p-4 bg-white text-slate-800 font-medium flex items-start gap-3 border-t border-slate-100">
                       <CheckCircle2 className="w-5 h-5 text-[#25d366] shrink-0 mt-0.5" />
                       {faq.a}
                     </div>
