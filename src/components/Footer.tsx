@@ -57,8 +57,8 @@ export default function Footer() {
               <li><Link to="/about" className="hover:text-primary-400 transition-colors">About Us</Link></li>
               <li><Link to="/services" className="hover:text-primary-400 transition-colors">Our Services</Link></li>
               <li><Link to="/contact" className="hover:text-primary-400 transition-colors">Contact Us</Link></li>
-              <li><a href="/#parents-inquiry" className="hover:text-primary-400 transition-colors">Book a Demo</a></li>
-              <li><a href="/#tutor-inquiry" className="hover:text-primary-400 transition-colors">Join as Tutor</a></li>
+              <li><a href="/#parents-inquiry" className="hover:text-primary-400 transition-colors">👨‍👩‍👧 Parents Inquiry</a></li>
+              <li><a href="/#tutor-inquiry" className="hover:text-primary-400 transition-colors">🧑‍🏫 Tutor Inquiry</a></li>
             </ul>
           </div>
 
