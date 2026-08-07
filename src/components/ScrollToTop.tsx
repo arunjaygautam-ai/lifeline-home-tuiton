@@ -6,13 +6,31 @@ export default function ScrollToTop() {
 
   useEffect(() => {
     if (hash) {
-      setTimeout(() => {
+      const scrollToHash = () => {
         const id = hash.replace('#', '');
         const element = document.getElementById(id);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          const headerOffset = 100;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: Math.max(0, offsetPosition),
+            behavior: 'smooth'
+          });
         }
-      }, 100);
+      };
+
+      scrollToHash();
+      const timer1 = setTimeout(scrollToHash, 100);
+      const timer2 = setTimeout(scrollToHash, 350);
+      const timer3 = setTimeout(scrollToHash, 700);
+
+      return () => {
+        clearTimeout(timer1);
+        clearTimeout(timer2);
+        clearTimeout(timer3);
+      };
     } else {
       window.scrollTo(0, 0);
     }
@@ -20,3 +38,4 @@ export default function ScrollToTop() {
 
   return null;
 }
+
