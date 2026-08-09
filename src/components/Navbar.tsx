@@ -128,67 +128,62 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Nav Overlay & Drawer */}
+      {/* Mobile Nav */}
       <AnimatePresence>
         {isOpen && (
-          <>
-            {/* Backdrop overlay covering bottom sticky bar */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setIsOpen(false)}
-              className="lg:hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[1000]"
-            />
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="lg:hidden absolute top-[calc(100%+10px)] left-4 right-4 bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-2xl z-50 p-5"
+          >
+            <div className="flex flex-col gap-3">
+              {navLinks.map((link) => {
+                const isActive = link.path.startsWith('/#') 
+                  ? location.pathname === '/' && location.hash === link.path.replace('/', '')
+                  : location.pathname === link.path && !location.hash;
 
-            {/* Expanded Mobile Menu Drawer */}
-            <motion.div
-              initial={{ opacity: 0, y: -10, scale: 0.98 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -10, scale: 0.98 }}
-              className="lg:hidden fixed top-[72px] left-4 right-4 max-h-[calc(100vh-90px)] overflow-y-auto bg-white border border-slate-100 rounded-3xl shadow-2xl z-[1001]"
-            >
-              <div className="p-5 flex flex-col gap-3 pb-8">
-                {navLinks.map((link) => {
-                  const isActive = link.path.startsWith('/#') 
-                    ? location.pathname === '/' && location.hash === link.path.replace('/', '')
-                    : location.pathname === link.path && !location.hash;
+                return (
+                  <Link
+                    key={link.name}
+                    to={link.path}
+                    className={cn(
+                      'text-base font-bold p-3 rounded-2xl transition-colors',
+                      isActive ? 'text-primary-600 bg-primary-50' : 'text-slate-600 hover:bg-slate-50'
+                    )}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
 
-                  return (
-                    <Link
-                      key={link.name}
-                      to={link.path}
-                      className={cn(
-                        'text-base font-bold p-3 rounded-2xl transition-colors',
-                        isActive ? 'text-primary-600 bg-primary-50' : 'text-slate-600 hover:bg-slate-50'
-                      )}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {link.name}
-                    </Link>
-                  );
-                })}
-                <div className="h-px bg-slate-100 my-1" />
-                <Link
-                  to="/#parents-inquiry"
-                  onClick={() => setIsOpen(false)}
-                  className="block bg-[#7a52a3] hover:bg-[#68438c] text-white p-3.5 rounded-2xl text-center font-bold shadow-md transition-colors"
-                >
-                  👨‍👩‍👧 Parents Inquiry
-                </Link>
-                <Link
-                  to="/#tutor-inquiry"
-                  onClick={() => setIsOpen(false)}
-                  className="block bg-[#7a52a3] hover:bg-[#68438c] text-white p-3.5 rounded-2xl text-center font-bold shadow-md transition-colors"
-                >
-                  🧑‍🏫 Tutor Inquiry
-                </Link>
-                <a href="tel:+919934985213" className="flex items-center justify-center gap-2 p-3.5 text-slate-700 border border-slate-200 bg-slate-50 rounded-2xl font-bold hover:bg-slate-100 transition-colors">
-                  <Phone className="w-5 h-5 text-primary-600" /> Call Us: +91 99349 85213
-                </a>
-              </div>
-            </motion.div>
-          </>
+              <div className="h-px bg-slate-100 my-1" />
+
+              <Link
+                to="/#parents-inquiry"
+                onClick={() => setIsOpen(false)}
+                className="block w-[78%] bg-[#7a52a3] text-white p-3 rounded-2xl text-center font-bold shadow-md text-sm sm:text-base transition-transform active:scale-95"
+              >
+                👨‍👩‍👧 Parents Inquiry
+              </Link>
+
+              <Link
+                to="/#tutor-inquiry"
+                onClick={() => setIsOpen(false)}
+                className="block w-[78%] bg-[#7a52a3] text-white p-3 rounded-2xl text-center font-bold shadow-md text-sm sm:text-base transition-transform active:scale-95"
+              >
+                🧑‍🏫 Tutor Inquiry
+              </Link>
+
+              <a 
+                href="tel:+919934985213" 
+                className="flex items-center justify-center gap-2 w-[78%] p-3 text-slate-700 border border-slate-200 bg-slate-50 rounded-2xl font-bold text-sm sm:text-base"
+              >
+                <Phone className="w-4 h-4 text-primary-600" /> Call Us: +91 99349 85213
+              </a>
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </header>
