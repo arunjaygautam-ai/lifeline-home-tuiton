@@ -91,12 +91,12 @@ export default function Home() {
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }} 
               animate={{ opacity: 1, scale: 1 }} 
-              className="w-full min-h-[200px] md:min-h-[360px] bg-white rounded-2xl overflow-hidden shadow-lg"
+              className="w-full bg-white rounded-2xl overflow-hidden shadow-lg"
             >
               <img 
                 src="/banner.png" 
                 alt="Lifeline Home Tuition - Top Rated Home Tutors in Patna" 
-                className="w-full h-auto object-contain block rounded-2xl min-h-[200px] md:min-h-[360px]" 
+                className="w-full h-auto object-contain block rounded-2xl" 
                 onError={(e) => {
                   const target = e.currentTarget;
                   if (target.src !== '/hero-image.jpeg') {
@@ -115,7 +115,7 @@ export default function Home() {
                 id="parents-inquiry"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="w-full bg-[#7a52a3] rounded-2xl p-4 md:p-6 shadow-xl text-white scroll-mt-28 md:scroll-mt-32"
+                className="w-full bg-[#7a52a3] rounded-2xl p-4 md:p-6 shadow-xl text-white scroll-mt-24"
               >
                 <h2 className="text-xl font-bold text-center mb-4" style={{ color: 'white' }}>Parents Inquiry</h2>
                 <form className="flex flex-col gap-3" onSubmit={handleStudentSubmit}>
@@ -162,7 +162,7 @@ export default function Home() {
                 id="tutor-inquiry"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="w-full bg-[#7a52a3] rounded-2xl p-4 md:p-6 shadow-xl text-white scroll-mt-28 md:scroll-mt-32"
+                className="w-full bg-[#7a52a3] rounded-2xl p-4 md:p-6 shadow-xl text-white scroll-mt-24"
               >
                 <h2 className="text-xl font-bold text-center mb-4" style={{ color: 'white' }}>Tutor Inquiry</h2>
                 <form className="flex flex-col gap-3" onSubmit={handleTutorSubmit}>
