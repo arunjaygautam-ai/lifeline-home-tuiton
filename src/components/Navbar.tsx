@@ -28,6 +28,8 @@ export default function Navbar() {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
+    { name: 'Parents Inquiry', path: '/#parents-inquiry' },
+    { name: 'Tutor Inquiry', path: '/#tutor-inquiry' },
     { name: 'Contact', path: '/contact' },
   ];
 
