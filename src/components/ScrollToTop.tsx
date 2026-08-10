@@ -6,36 +6,45 @@ export default function ScrollToTop() {
 
   useEffect(() => {
     if (hash) {
-      const scrollToHash = () => {
-        const id = hash.replace('#', '');
+      const id = hash.replace('#', '');
+      
+      const scrollToElement = (isInstant = false) => {
         const element = document.getElementById(id);
         if (element) {
-          const headerOffset = 100;
-          const elementPosition = element.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          const navbarHeight = 84;
+          const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+          const offsetPosition = Math.max(0, elementPosition - navbarHeight);
 
           window.scrollTo({
-            top: Math.max(0, offsetPosition),
-            behavior: 'smooth'
+            top: offsetPosition,
+            behavior: isInstant ? 'auto' : 'smooth'
           });
+          return true;
         }
+        return false;
       };
 
-      scrollToHash();
-      const timer1 = setTimeout(scrollToHash, 100);
-      const timer2 = setTimeout(scrollToHash, 350);
-      const timer3 = setTimeout(scrollToHash, 700);
+      // 1. Immediate scroll on page load to prevent showing banner first
+      const found = scrollToElement(true);
+      
+      if (!found) {
+        requestAnimationFrame(() => {
+          scrollToElement(true);
+        });
+      }
+
+      // 2. Smooth micro-adjustment after layout & images settle
+      const timer1 = setTimeout(() => scrollToElement(false), 120);
+      const timer2 = setTimeout(() => scrollToElement(false), 400);
 
       return () => {
         clearTimeout(timer1);
         clearTimeout(timer2);
-        clearTimeout(timer3);
       };
     } else {
-      window.scrollTo(0, 0);
+      window.scrollTo({ top: 0, behavior: 'auto' });
     }
   }, [pathname, hash]);
 
   return null;
 }
-
