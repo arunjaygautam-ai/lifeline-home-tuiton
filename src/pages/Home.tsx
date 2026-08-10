@@ -91,7 +91,7 @@ export default function Home() {
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }} 
               animate={{ opacity: 1, scale: 1 }} 
-              className="w-full bg-white rounded-2xl overflow-hidden shadow-lg"
+              className="w-full bg-slate-50 rounded-2xl overflow-hidden shadow-lg min-h-[160px] sm:min-h-[260px] md:min-h-[340px]"
             >
               <img 
                 src="/banner.png" 
