@@ -87,22 +87,16 @@ export default function Home() {
 
           <div className="flex flex-col gap-6 lg:gap-8 max-w-6xl mx-auto">
             
-            {/* Top Image/Banner side (styled like screenshot) */}
+            {/* Top Main Banner Image */}
             <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }} 
+              initial={{ opacity: 0, scale: 0.98 }} 
               animate={{ opacity: 1, scale: 1 }} 
-              className="w-full bg-slate-50 rounded-2xl overflow-hidden shadow-lg min-h-[160px] sm:min-h-[260px] md:min-h-[340px]"
+              className="w-full bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 p-1 sm:p-2 transition-all"
             >
               <img 
                 src="/banner.png" 
                 alt="Lifeline Home Tuition - Top Rated Home Tutors in Patna" 
-                className="w-full h-auto object-contain block rounded-2xl" 
-                onError={(e) => {
-                  const target = e.currentTarget;
-                  if (target.src !== '/hero-image.jpeg') {
-                    target.src = '/hero-image.jpeg';
-                  }
-                }}
+                className="w-full h-auto object-contain block rounded-xl shadow-sm" 
                 referrerPolicy="no-referrer"
               />
             </motion.div>
